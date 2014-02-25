@@ -33,12 +33,7 @@
         <icon src="icons/bb/icon.png" gap:platform="blackberry" />
         
   
-  
-  
-  <!--icons end -->
-  
-  
-  <!--Splash screens -->
+ 
   
         <!-- iphone -->
         <gap:splash src="splash.png" />
