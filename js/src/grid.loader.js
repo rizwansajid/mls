@@ -41,8 +41,8 @@ function jqGridInclude()
     {
         var oHead = document.getElementsByTagName('head')[0];
         var oScript = document.createElement('script');
-        oScript.setAttribute('type', 'text/javascript');
-        oScript.setAttribute('language', 'javascript');
+        oScript.setAttribute('type', text/javascript');
+        oScript.setAttribute('language', javascript');
         oScript.setAttribute('src', jsFile);
         oHead.appendChild(oScript);
     }

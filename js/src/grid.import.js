@@ -41,7 +41,7 @@
                         if(xmldata) {
                         // save the datatype
                             var svdatatype = jstr.grid.datatype;
-                            jstr.grid.datatype = 'xmlstring';
+                            jstr.grid.datatype = xmlstring';
                             jstr.grid.datastr = xml;
                             $($t).jqGrid( jstr1 ).jqGrid("setGridParam",{datatype:svdatatype});
                         } else {
@@ -53,13 +53,13 @@
                     }
                 };
                 var JsonConvert = function (jsonstr,o){
-                    if (jsonstr && typeof jsonstr == 'string') {
+                    if (jsonstr && typeof jsonstr == string') {
                         var json = $.jgrid.parse(jsonstr);
                         var gprm = json[o.jsonGrid.config];
                         var jdata = json[o.jsonGrid.data];
                         if(jdata) {
                             var svdatatype = gprm.datatype;
-                            gprm.datatype = 'jsonstring';
+                            gprm.datatype = jsonstring';
                             gprm.datastr = jdata;
                             $($t).jqGrid( gprm ).jqGrid("setGridParam",{datatype:svdatatype});
                         } else {
@@ -68,14 +68,14 @@
                     }
                 };
                 switch (o.imptype){
-                    case 'xml':
+                    case xml':
                         $.ajax($.extend({
                             url:o.impurl,
                             type:o.mtype,
                             data: o.impData,
                             dataType:"xml",
                             complete: function(xml,stat) {
-                                if(stat == 'success') {
+                                if(stat == success') {
                                     XmlConvert(xml.responseXML,o);
                                     if($.isFunction(o.importComplete)) {
                                         o.importComplete(xml);
@@ -85,9 +85,9 @@
                             }
                         }, o.ajaxOptions));
                         break;
-                    case 'xmlstring' :
+                    case xmlstring' :
                         // we need to make just the conversion and use the same code as xml
-                        if(o.impstring && typeof o.impstring == 'string') {
+                        if(o.impstring && typeof o.impstring == string') {
                             var xmld = $.jgrid.stringToDoc(o.impstring);
                             if(xmld) {
                                 XmlConvert(xmld,o);
@@ -99,14 +99,14 @@
                             xmld = null;
                         }
                         break;
-                    case 'json':
+                    case json':
                         $.ajax($.extend({
                             url:o.impurl,
                             type:o.mtype,
                             data: o.impData,
                             dataType:"json",
                             complete: function(json,stat) {
-                                if(stat == 'success') {
+                                if(stat == success') {
                                     JsonConvert(json.responseText,o );
                                     if($.isFunction(o.importComplete)) {
                                         o.importComplete(json);
@@ -116,8 +116,8 @@
                             }
                         }, o.ajaxOptions ));
                         break;
-                    case 'jsonstring' :
-                        if(o.impstring && typeof o.impstring == 'string') {
+                    case jsonstring' :
+                        if(o.impstring && typeof o.impstring == string') {
                             JsonConvert(o.impstring,o );
                             if($.isFunction(o.importComplete)) {
                                 o.importComplete(o.impstring);
@@ -162,10 +162,10 @@
                     }
                 }
                 switch (o.exptype) {
-                    case 'xmlstring' :
+                    case xmlstring' :
                         ret = "<"+o.root+">"+xmlJsonClass.json2xml(gprm,o.ident)+"</"+o.root+">";
                         break;
-                    case 'jsonstring' :
+                    case jsonstring' :
                         ret = "{"+ xmlJsonClass.toJson(gprm,o.root,o.ident,false)+"}";
                         if(gprm.postData.filters !== undefined) {
                             ret=ret.replace(/filters":"/,'filters":');

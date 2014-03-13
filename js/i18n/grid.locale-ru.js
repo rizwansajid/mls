@@ -18,7 +18,7 @@ $.jgrid = {
     caption: "Поиск...",
     Find: "Найти",
     Reset: "Сброс",
-    odata : ['равно', 'не равно', 'меньше', 'меньше или равно','больше','больше или равно', 'начинается с','не начинается с','находится в','не находится в','заканчивается на','не заканчивается на','содержит','не содержит'],
+    odata : ['равно', не равно', меньше', меньше или равно','больше','больше или равно', начинается с','не начинается с','находится в','не находится в','заканчивается на','не заканчивается на','содержит','не содержит'],
     groupOps: [	{ op: "AND", text: "все" },	{ op: "OR",  text: "любой" }	],
     matchText: " совпадает",
     rulesText: " правила"
@@ -41,7 +41,7 @@ $.jgrid = {
         email: "некорректное значение e-mail",
         integer: "Пожалуйста, введите целое число",
         date: "Пожалуйста, введите правильную дату",
-        url: "неверная ссылка. Необходимо ввести префикс ('http://' or 'https://')",
+        url: "неверная ссылка. Необходимо ввести префикс ('http://' or https://')",
 		nodefined : " is not defined!",
 		novalue : " return value is required!",
 		customarray : "Custom function should return array!",
@@ -86,9 +86,9 @@ $.jgrid = {
     model : "Число полей не соответствует числу столбцов таблицы!"
 	},
 	formatter : {
-		integer : {thousandsSeparator: " ", defaultValue: '0'},
-		number : {decimalSeparator:",", thousandsSeparator: " ", decimalPlaces: 2, defaultValue: '0,00'},
-		currency : {decimalSeparator:",", thousandsSeparator: " ", decimalPlaces: 2, prefix: "", suffix:"", defaultValue: '0,00'},
+		integer : {thousandsSeparator: " ", defaultValue: 0'},
+		number : {decimalSeparator:",", thousandsSeparator: " ", decimalPlaces: 2, defaultValue: 0,00'},
+		currency : {decimalSeparator:",", thousandsSeparator: " ", decimalPlaces: 2, prefix: "", suffix:"", defaultValue: 0,00'},
 		date : {
 			dayNames:   [
 				"Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб",
@@ -99,9 +99,9 @@ $.jgrid = {
 				"Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
 			],
 			AmPm : ["am","pm","AM","PM"],
-			S: function (j) {return j < 11 || j > 13 ? ['st', 'nd', 'rd', 'th'][Math.min((j - 1) % 10, 3)] : 'th'},
-			srcformat: 'Y-m-d',
-			newformat: 'd.m.Y',
+			S: function (j) {return j < 11 || j > 13 ? ['st', nd', rd', th'][Math.min((j - 1) % 10, 3)] : th'},
+			srcformat: Y-m-d',
+			newformat: d.m.Y',
 			masks : {
 	            ISO8601Long:"Y-m-d H:i:s",
 	            ISO8601Short:"Y-m-d",
@@ -117,11 +117,11 @@ $.jgrid = {
 	        },
 	        reformatAfterEdit : false
 		},
-		baseLinkUrl: '',
-		showAction: '',
-	  target: '',
+		baseLinkUrl: ',
+		showAction: ',
+	  target: ',
 	  checkbox : {disabled:true},
-		idName : 'id'
+		idName : id'
 	}
 };
 })(jQuery);

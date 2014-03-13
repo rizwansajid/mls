@@ -306,7 +306,7 @@ var xmlJsonClass = {
 		return s;
 	},
 	escape: function(txt) {
-		return txt.replace(/[\\]/g, "\\\\").replace(/[\"]/g, '\\"').replace(/[\n]/g, '\\n').replace(/[\r]/g, '\\r');
+		return txt.replace(/[\\]/g, "\\\\").replace(/[\"]/g, \\"').replace(/[\n]/g, \\n').replace(/[\r]/g, \\r');
 	},
 	removeWhite: function(e) {
 		e.normalize();

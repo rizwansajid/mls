@@ -203,7 +203,7 @@ domtab={
 	getTarget:function(e){
 		var target = window.event ? window.event.srcElement : e ? e.target : null;
 		if (!target){return false;}
-		if (target.nodeName.toLowerCase() != 'a'){target = target.parentNode;}
+		if (target.nodeName.toLowerCase() != a'){target = target.parentNode;}
 		return target;
 	},
 	cancelClick:function(e){
@@ -231,19 +231,19 @@ domtab={
 	},
 	cssjs:function(a,o,c1,c2){
 		switch (a){
-			case 'swap':
+			case swap':
 				o.className=!domtab.cssjs('check',o,c1)?o.className.replace(c2,c1):o.className.replace(c1,c2);
 			break;
-			case 'add':
-				if(!domtab.cssjs('check',o,c1)){o.className+=o.className?' '+c1:c1;}
+			case add':
+				if(!domtab.cssjs('check',o,c1)){o.className+=o.className?' +c1:c1;}
 			break;
-			case 'remove':
-				var rep=o.className.match(' '+c1)?' '+c1:c1;
+			case remove':
+				var rep=o.className.match(' +c1)?' +c1:c1;
 				o.className=o.className.replace(rep,'');
 			break;
-			case 'check':
+			case check':
 				var found=false;
-				var temparray=o.className.split(' ');
+				var temparray=o.className.split(' );
 				for(var i=0;i<temparray.length;i++){
 					if(temparray[i]==c1){found=true;}
 				}
@@ -252,5 +252,5 @@ domtab={
 		}
 	}
 }
-domtab.addEvent(window, 'load', domtab.init, false);
+domtab.addEvent(window, load', domtab.init, false);
 	

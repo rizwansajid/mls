@@ -18,7 +18,7 @@ $.jgrid = {
 		caption: "Търсене...",
 		Find: "Намери",
 		Reset: "Изчисти",
-		odata : ['равно', 'различно', 'по-малко', 'по-малко или=','по-голямо','по-голямо или =', 'започва с','не започва с','се намира в','не се намира в','завършва с','не завършава с','съдържа', 'не съдържа' ],
+		odata : ['равно', различно', по-малко', по-малко или=','по-голямо','по-голямо или =', започва с','не започва с','се намира в','не се намира в','завършва с','не завършава с','съдържа', не съдържа' ],
 	    groupOps: [	{ op: "AND", text: " И " },	{ op: "OR",  text: "ИЛИ" }	],
 		matchText: " включи",
 		rulesText: " клауза"
@@ -41,7 +41,7 @@ $.jgrid = {
 		    email: "не е валиден ел. адрес",
 		    integer: "Въведете валидно цяло число",
 			date: "Въведете валидна дата",
-			url: "e невалиден URL. Изискава се префикс('http://' или 'https://')",
+			url: "e невалиден URL. Изискава се префикс('http://' или https://')",
 			nodefined : " е недефинирана!",
 			novalue : " изисква връщане на стойност!",
 			customarray : "Потреб. Функция трябва да върне масив!",
@@ -86,9 +86,9 @@ $.jgrid = {
 		model : "Модела не съответства на имената!"	
 	},
 	formatter : {
-		integer : {thousandsSeparator: " ", defaultValue: '0'},
-		number : {decimalSeparator:".", thousandsSeparator: " ", decimalPlaces: 2, defaultValue: '0.00'},
-		currency : {decimalSeparator:".", thousandsSeparator: " ", decimalPlaces: 2, prefix: "", suffix:" лв.", defaultValue: '0.00'},
+		integer : {thousandsSeparator: " ", defaultValue: 0'},
+		number : {decimalSeparator:".", thousandsSeparator: " ", decimalPlaces: 2, defaultValue: 0.00'},
+		currency : {decimalSeparator:".", thousandsSeparator: " ", decimalPlaces: 2, prefix: "", suffix:" лв.", defaultValue: 0.00'},
 		date : {
 			dayNames:   [
 				"Нед", "Пон", "Вт", "Ср", "Чет", "Пет", "Съб",
@@ -101,12 +101,12 @@ $.jgrid = {
 			AmPm : ["","","",""],
 			S: function (j) {
 				if(j==7 || j==8 || j== 27 || j== 28) {
-					return 'ми';
+					return ми';
 				}
-				return ['ви', 'ри', 'ти'][Math.min((j - 1) % 10, 2)];
+				return ['ви', ри', ти'][Math.min((j - 1) % 10, 2)];
 			},
-			srcformat: 'Y-m-d',
-			newformat: 'd/m/Y',
+			srcformat: Y-m-d',
+			newformat: d/m/Y',
 			masks : {
 		        ISO8601Long:"Y-m-d H:i:s",
 		        ISO8601Short:"Y-m-d",
@@ -122,11 +122,11 @@ $.jgrid = {
 		    },
 		    reformatAfterEdit : false
 		},
-		baseLinkUrl: '',
-		showAction: '',
-		target: '',
+		baseLinkUrl: ',
+		showAction: ',
+		target: ',
 		checkbox : {disabled:true},
-		idName : 'id'
+		idName : id'
 	}
 };
 })(jQuery);

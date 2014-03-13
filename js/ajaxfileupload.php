@@ -21,13 +21,13 @@
 				url:'doajaxfileupload.php',
 				secureuri:false,
 				fileElementId:'fileToUpload',
-				dataType: 'json',
+				dataType: json',
 				data:{name:'logan', id:'id'},
 				success: function (data, status)
 				{
-					if(typeof(data.error) != 'undefined')
+					if(typeof(data.error) != undefined')
 					{
-						if(data.error != '')
+						if(data.error != ')
 						{
 							alert(data.error);
 						}else

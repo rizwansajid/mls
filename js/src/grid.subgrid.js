@@ -26,7 +26,7 @@ setSubGrid : function () {
 		cm = $t.p.subGridModel;
 		if(cm[0]) {
 			cm[0].align = $.extend([],cm[0].align || []);
-			for(var i=0;i<cm[0].name.length;i++) { cm[0].align[i] = cm[0].align[i] || 'left';}
+			for(var i=0;i<cm[0].name.length;i++) { cm[0].align[i] = cm[0].align[i] || left';}
 		}
 	});
 },
@@ -66,13 +66,13 @@ addSubGrid : function( pos, sind ) {
 					trdiv = $("<tr class='ui-widget-content ui-subtblcell'></tr>");
 					if(sgmap.repeatitems === true) {
 						$(sgmap.cell,this).each( function(i) {
-							subGridCell(trdiv, $(this).text() || '&#160;',i);
+							subGridCell(trdiv, $(this).text() || &#160;',i);
 						});
 					} else {
 						var f = ts.p.subGridModel[0].mapping || ts.p.subGridModel[0].name;
 						if (f) {
 							for (i=0;i<f.length;i++) {
-								subGridCell(trdiv, $(f[i],this).text() || '&#160;',i);
+								subGridCell(trdiv, $(f[i],this).text() || &#160;',i);
 							}
 						}
 					}
@@ -99,20 +99,20 @@ addSubGrid : function( pos, sind ) {
 			if (sjxml){
 				sgmap = ts.p.jsonReader.subgrid;
 				result = sjxml[sgmap.root];
-				if ( typeof result !== 'undefined' ) {
+				if ( typeof result !== undefined' ) {
 					for (i=0;i<result.length;i++) {
 						cur = result[i];
 						trdiv = $("<tr class='ui-widget-content ui-subtblcell'></tr>");
 						if(sgmap.repeatitems === true) {
 							if(sgmap.cell) { cur=cur[sgmap.cell]; }
 							for (j=0;j<cur.length;j++) {
-								subGridCell(trdiv, cur[j] || '&#160;',j);
+								subGridCell(trdiv, cur[j] || &#160;',j);
 							}
 						} else {
 							var f = ts.p.subGridModel[0].mapping || ts.p.subGridModel[0].name;
 							if(f.length) {
 								for (j=0;j<f.length;j++) {
-									subGridCell(trdiv, cur[f[j]] || '&#160;',j);
+									subGridCell(trdiv, cur[f[j]] || &#160;',j);
 								}
 							}
 						}
@@ -175,7 +175,7 @@ addSubGrid : function( pos, sind ) {
 		};
 		var _id, pID,atd, nhc=0, bfsc, r;
 		$.each(ts.p.colModel,function(i,v){
-			if(this.hidden === true || this.name == 'rn' || this.name == 'cb') {
+			if(this.hidden === true || this.name == rn' || this.name == cb') {
 				nhc++;
 			}
 		});

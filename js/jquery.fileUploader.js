@@ -6,16 +6,16 @@
 */
 
 (function($) {
-	$.fileUploader = {version: '1.3', count: 0};
+	$.fileUploader = {version: 1.3', count: 0};
 	$.fn.fileUploader = function(config){
 		
 		config = $.extend({}, {
 			autoUpload: false,
 			limit: false,
-			buttonUpload: '#px-submit',
-			buttonClear: '#px-clear',
-			selectFileLabel: 'Select files',
-			allowedExtension: 'jpg|jpeg|gif|png',
+			buttonUpload: #px-submit',
+			buttonClear: #px-clear',
+			selectFileLabel: Select files',
+			allowedExtension: jpg|jpeg|gif|png',
 			timeInterval: [1, 2, 4, 2, 1, 5], //Mock percentage for iframe upload
 			percentageInterval: [10, 20, 30, 40, 60, 80],
 			
@@ -33,10 +33,10 @@
 		$.fileUploader.count++;
 		
 		//Multiple instance of a FOrm Container
-		var pxUploadForm = 'px-form-' + $.fileUploader.count,
-		pxWidget = 'px-widget-' + $.fileUploader.count,
-		pxButton = 'px-button-' + $.fileUploader.count,
-		wrapper = ' \
+		var pxUploadForm = px-form-' + $.fileUploader.count,
+		pxWidget = px-widget-' + $.fileUploader.count,
+		pxButton = px-button-' + $.fileUploader.count,
+		wrapper =  \
 			<div id="'+ pxWidget +'" class="px-widget ui-widget"> \
 				<div class="ui-helper-clearfix"> \
 					<div id="'+ pxUploadForm +'-input" class="px-form-input"></div> \
@@ -45,10 +45,10 @@
 				<div id="'+ pxUploadForm +'"></div> \
 			</div> \
 		',
-		pxUploadForm = '#' + pxUploadForm,
-		pxUploadFormInput = pxUploadForm + '-input',
-		pxButton = '#' + pxButton,
-		pxWidget = '#' + pxWidget,
+		pxUploadForm = #' + pxUploadForm,
+		pxUploadFormInput = pxUploadForm + -input',
+		pxButton = #' + pxButton,
+		pxWidget = #' + pxWidget,
 		buttonClearId = null,
 	
 		itr = 1, //index/itr of file
@@ -57,7 +57,7 @@
 	
 		e = this, //set e as this
 		selector = $(this).selector,
-		buttonM = pxButton + ' input, '+ pxButton +' button'; //Accept button as input and as button
+		buttonM = pxButton +  input, + pxButton +' button'; //Accept button as input and as button
 		isFile = false, //this is use to hide other inputs in a form
 		progress = 0, //percentage of the upload,
 		totalForm = 0,
@@ -89,7 +89,7 @@
 				px.form.children('.px-input-button').prepend('<span>'+ config.selectFileLabel +'</span>');
 				
 				//move upload and clear button into id px_button
-				px.form.find(config.buttonUpload + ',' + config.buttonClear).appendTo(pxButton);
+				px.form.find(config.buttonUpload + ,' + config.buttonClear).appendTo(pxButton);
 				
 				//Transform file input into ui button
 				px.form.find('.px-input-button').button({
@@ -121,13 +121,13 @@
 			//Clone, format and append form
 			printForm: function(){
 				
-				var formId = 'pxupload' + itr,
-				iframeId = formId + '_frame';
+				var formId = pxupload' + itr,
+				iframeId = formId + _frame';
 				
 				$('<iframe name="'+ iframeId +'"></iframe>').attr({
 					id: iframeId,
-					src: 'about:blank',
-					style: 'display:none'
+					src: about:blank',
+					style: display:none'
 				}).prependTo(pxUploadFormInput);
 				
 				px.form.clone().attr({
@@ -136,7 +136,7 @@
 				}).prependTo(pxUploadFormInput).show();
 				
 				//Show only the file input
-				px.showInputFile( '#'+formId );
+				px.showInputFile( #'+formId );
 				
 				//This is not good but i left no choice because live function is not working on IE
 				$(selector).change(function() {
@@ -182,7 +182,7 @@
 			},
 			
 			validateFileName: function(filename) {
-				var extensions = new RegExp(config.allowedExtension + '$', 'i');
+				var extensions = new RegExp(config.allowedExtension + $', i');
 				if (extensions.test(filename)){
 					return filename;
 				} else {
@@ -193,9 +193,9 @@
 			getFileSize: function(file) {
 				var fileSize = 0;
 				if (file.size > 1024 * 1024) {
-					fileSize = (Math.round(file.size * 100 / (1024 * 1024)) / 100).toString() + 'MB';
+					fileSize = (Math.round(file.size * 100 / (1024 * 1024)) / 100).toString() + MB';
 				} else {
-					fileSize = (Math.round(file.size * 100 / 1024) / 100).toString() + 'KB';
+					fileSize = (Math.round(file.size * 100 / 1024) / 100).toString() + KB';
 				}
 				return fileSize;
 			},
@@ -203,7 +203,7 @@
 			//clear form data
 			clearFormData: function(form) {
 				$(form).find(':input').each(function() {
-					if (this.type == 'file') {
+					if (this.type == file') {
 						$(this).val('');
 					}
 				});
@@ -233,8 +233,8 @@
 		*	Html5 Drag and Drop
 		*/
 		$.event.props.push('dataTransfer');
-		$(pxWidget).bind( 'dragenter dragover', false)
-		.bind( 'drop', function( e ) {
+		$(pxWidget).bind( dragenter dragover', false)
+		.bind( drop', function( e ) {
 			e.stopPropagation();
 			e.preventDefault();
 			
@@ -247,7 +247,7 @@
 		*/
 		function uploadChange($this) {
 			
-			var $form = $(pxUploadFormInput + ' #pxupload'+ itr);
+			var $form = $(pxUploadFormInput +  #pxupload'+ itr);
 					
 			//validate file
 			var filename = (isHtml5)? $this.name : px.getFileName( $this.val() );
@@ -281,16 +281,16 @@
 			
 			//append size of the file after filename
 			if (isHtml5) {
-				filename += ' (' + px.getFileSize($this) + ')';
+				filename +=  (' + px.getFileSize($this) + )';
 			}
 			
 			//DIsplay syled markup				
 			$(pxUploadForm).append(
 				$('<div>').attr({
-					'class': 'upload-data pending ui-widget-content ui-corner-all',
-					id: 'pxupload'+ itr +'_text'
+					'class': upload-data pending ui-widget-content ui-corner-all',
+					id: pxupload'+ itr +'_text'
 				})
-				.data('formId', 'pxupload'+ itr)
+				.data('formId', pxupload'+ itr)
 				.append(' \
 					<ul class="actions ui-helper-clearfix"> \
 						<li title="Upload" class="upload ui-state-default ui-corner-all"> \
@@ -312,7 +312,7 @@
 			//Store input in form
 			$form.data('input', $this);
 			
-			$form.appendTo(pxUploadForm + ' #pxupload'+ itr +'_text');
+			$form.appendTo(pxUploadForm +  #pxupload'+ itr +'_text');
 			
 			//hide the input file
 			px.hideInputFile( $form );
@@ -357,9 +357,9 @@
 				return;
 			}
 			
-			totalForm = $(pxUploadForm + ' form').parent('.upload-data').get().length;
+			totalForm = $(pxUploadForm +  form').parent('.upload-data').get().length;
 			if (totalForm > 0) {
-				pendingUpload = $(pxUploadForm + ' form').parent('.upload-data').get(0);
+				pendingUpload = $(pxUploadForm +  form').parent('.upload-data').get(0);
 				$form = $(pendingUpload).children('form');
 				
 				//before upload
@@ -391,7 +391,7 @@
 				fd.append($form.find(selector).attr('name'), file);
 				//get other form input and append to formData
 				$form.find(':input').each(function() {
-					if (this.type != 'file') {
+					if (this.type != file') {
 						fd.append($(this).attr('name'), $(this).val());
 					}
 				});
@@ -409,14 +409,14 @@
 					cache: false,
 					contentType: false,
 					processData: false,
-					type: 'POST',
+					type: POST',
 					xhr: function() {
 						var req = $.ajaxSettings.xhr();
 						if (req) {
 							req.upload.addEventListener('progress',function(ev){
 								//Display progress Percentage
 								progress = Math.round(ev.loaded * 100 / ev.total);
-								$percentage.text(progress.toString() + '%');
+								$percentage.text(progress.toString() + %');
 								$progressBar.progressbar({
 									value: progress
 								});
@@ -460,7 +460,7 @@
 			
 			$form.submit();
 			
-			var id = pxWidget + ' #' + $form.attr('id');
+			var id = pxWidget +  #' + $form.attr('id');
 			$(id +'_frame').load(function(){
 				
 				data = $(this).contents().find('body').html();
@@ -469,7 +469,7 @@
 				
 				clearTimeout ( progressTime );
 				progress = 100;
-				$percentage.text(progress.toString() + '%');
+				$percentage.text(progress.toString() + %');
 				$progressBar.progressbar({
 					value: progress
 				});
@@ -486,7 +486,7 @@
 			
 			if (percentageInterval[pcount]) {
 				progress = percentageInterval[pcount] + Math.floor( Math.random() * 5 + 1 );
-				$percentage.text(progress.toString() + '%');
+				$percentage.text(progress.toString() + %');
 				$progressBar.progressbar({
 					value: progress
 				});
@@ -529,7 +529,7 @@
 			$uploadData = $form.parent();
 			$uploadData.find('.status').text('Uploading...');
 			$uploadData.removeClass('pending').addClass('uploading');
-			$uploadData.find('.delete').removeClass('delete').addClass('cancel').attr('title', 'Cancel');
+			$uploadData.find('.delete').removeClass('delete').addClass('cancel').attr('title', Cancel');
 		}
 		
 		/*
@@ -542,15 +542,15 @@
 				status = $(data).find('#status').text();
 			}
 			
-			formId = pxWidget + ' #' + formId;
-			$uploadData = $(formId + '_text');
+			formId = pxWidget +  #' + formId;
+			$uploadData = $(formId + _text');
 			
-			if (status == 'success'){
+			if (status == success'){
 				
 				$uploadData.removeClass('uploading').addClass('success');
 				$uploadData.children('.status').html( $(data).find('#message').text() );
 				
-			} else if (status == 'error'){
+			} else if (status == error'){
 				
 				$uploadData.removeClass('uploading').addClass('error');
 				
@@ -561,14 +561,14 @@
 					$uploadData.children('.status').html( $(data).find('#message').text() );
 				}
 				
-			} else if (status == 'abort') {
+			} else if (status == abort') {
 				
 				$uploadData.removeClass('uploading').addClass('cancel');
 				
-				$uploadData.children('.status').html( 'Cancelled' );
+				$uploadData.children('.status').html( Cancelled' );
 			}
 			
-			$uploadData.find('.cancel').removeClass('cancel').addClass('delete').attr('title', 'Delete');
+			$uploadData.find('.cancel').removeClass('cancel').addClass('delete').attr('title', Delete');
 			
 			//hide progress bar
 			$uploadData.find('.progress').hide();
@@ -577,7 +577,7 @@
 			config.afterEachUpload(data, status, $uploadData);
 			
 			$(formId).remove();
-			$(formId + '_frame').remove();
+			$(formId + _frame').remove();
 		}
 		
 		/*
@@ -589,10 +589,10 @@
 				//store button clear id
 				buttonClearId = $(config.buttonClear, pxButton).attr('id');
 				//Cancel Button
-				$(config.buttonClear, pxButton).attr({ id: 'px-cancel', title: 'Cancel' });
+				$(config.buttonClear, pxButton).attr({ id: px-cancel', title: Cancel' });
 			} else {
 				//Clear button
-				$('#px-cancel', pxButton).attr({ id: buttonClearId, title: 'Clear' });
+				$('#px-cancel', pxButton).attr({ id: buttonClearId, title: Clear' });
 			}
 		}
 		
@@ -655,7 +655,7 @@
 			
 			limit++;
 			
-			var id = pxWidget + ' #' + $(this).parents('.upload-data').data('formId');
+			var id = pxWidget +  #' + $(this).parents('.upload-data').data('formId');
 			$(id+'_text').fadeOut('slow',function(){
 				$(id+'_frame').remove();
 				$(this).remove();
@@ -681,7 +681,7 @@
 			if (!isHtml5) {
 				$form = $(this).parents('.upload-data').children('form');
 				$form.remove();
-				afterEachUpload($form.attr('id'), null, 'abort', 'Cancelled');
+				afterEachUpload($form.attr('id'), null, abort', Cancelled');
 			}
 		});
 		
@@ -695,7 +695,7 @@
 			}
 			
 			$('form', pxUploadForm).each(function(){
-				afterEachUpload($(this).attr('id'), null, 'abort', 'Cancelled');
+				afterEachUpload($(this).attr('id'), null, abort', Cancelled');
 			});
 			
 			//Show Clear Button

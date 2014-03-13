@@ -18,7 +18,7 @@ $.jgrid = {
 		caption: "بحث...",
 		Find: "بحث",
 		Reset: "إلغاء",
-		odata : ['يساوي', 'يختلف', 'أقل', 'أقل أو يساوي','أكبر','أكبر أو يساوي', 'يبدأ بـ','لا يبدأ بـ','est dans',"n'est pas dans",'ينته بـ','لا ينته بـ','يحتوي','لا يحتوي'],
+		odata : ['يساوي', يختلف', أقل', أقل أو يساوي','أكبر','أكبر أو يساوي', يبدأ بـ','لا يبدأ بـ','est dans',"n'est pas dans",'ينته بـ','لا ينته بـ','يحتوي','لا يحتوي'],
 		groupOps: [	{ op: "مع", text: "الكل" },	{ op: "أو",  text: "لا أحد" }	],
 		matchText: " توافق",
 		rulesText: " قواعد"
@@ -40,7 +40,7 @@ $.jgrid = {
 			maxValue: "يجب أن تكون القيمة أقل أو تساوي 0",
 			email: "بريد غير صحيح",
 			integer: "سجل عدد طبييعي صحيح",
-			url: "ليس عنوانا صحيحا. البداية الصحيحة ('http://' أو 'https://')",
+			url: "ليس عنوانا صحيحا. البداية الصحيحة ('http://' أو https://')",
 			nodefined : " ليس محدد!",
 			novalue : " قيمة الرجوع مطلوبة!",
 			customarray : "يجب على الدالة الشخصية أن تنتج جدولا",
@@ -85,9 +85,9 @@ $.jgrid = {
 		model : "عدد العناوين (colNames) <> عدد التسجيلات (colModel)!"
 	},
 	formatter : {
-		integer : {thousandsSeparator: " ", defaultValue: '0'},
-		number : {decimalSeparator:",", thousandsSeparator: " ", decimalPlaces: 2, defaultValue: '0,00'},
-		currency : {decimalSeparator:",", thousandsSeparator: " ", decimalPlaces: 2, prefix: "", suffix:"", defaultValue: '0,00'},
+		integer : {thousandsSeparator: " ", defaultValue: 0'},
+		number : {decimalSeparator:",", thousandsSeparator: " ", decimalPlaces: 2, defaultValue: 0,00'},
+		currency : {decimalSeparator:",", thousandsSeparator: " ", decimalPlaces: 2, prefix: "", suffix:"", defaultValue: 0,00'},
 		date : {
 			dayNames:   [
 				"الأحد", "الإثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت",
@@ -98,9 +98,9 @@ $.jgrid = {
 				"جانفي", "فيفري", "مارس", "أفريل", "ماي", "جوان", "جويلية", "أوت", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"
 			],
 			AmPm : ["صباحا","مساءا","صباحا","مساءا"],
-			S: function (j) {return j == 1 ? 'er' : 'e';},
-			srcformat: 'Y-m-d',
-			newformat: 'd/m/Y',
+			S: function (j) {return j == 1 ? er' : e';},
+			srcformat: Y-m-d',
+			newformat: d/m/Y',
 			masks : {
 				ISO8601Long:"Y-m-d H:i:s",
 				ISO8601Short:"Y-m-d",
@@ -116,11 +116,11 @@ $.jgrid = {
 			},
 			reformatAfterEdit : false
 		},
-		baseLinkUrl: '',
-		showAction: '',
-		target: '',
+		baseLinkUrl: ',
+		showAction: ',
+		target: ',
 		checkbox : {disabled:true},
-		idName : 'id'
+		idName : id'
 	}
 };
 })(jQuery);

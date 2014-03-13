@@ -13,14 +13,14 @@
 /*global define, window, document, URL, webkitURL, FileReader */
 
 (function (factory) {
-    'use strict';
-    if (typeof define === 'function' && define.amd) {
+    use strict';
+    if (typeof define === function' && define.amd) {
         // Register as an anonymous AMD module:
         define([
-            'jquery',
-            'tmpl',
-            'load-image',
-            './jquery.fileupload-fp'
+            jquery',
+            tmpl',
+            load-image',
+            ./jquery.fileupload-fp'
         ], factory);
     } else {
         // Browser globals:
@@ -31,7 +31,7 @@
         );
     }
 }(function ($, tmpl, loadImage) {
-    'use strict';
+    use strict';
 
     // The UI version extends the FP (file processing) version or the basic
     // file upload widget and adds complete user interface interaction:
@@ -67,9 +67,9 @@
             // to always display preview images as img elements:
             previewAsCanvas: true,
             // The ID of the upload template:
-            uploadTemplateId: 'template-upload',
+            uploadTemplateId: template-upload',
             // The ID of the download template:
-            downloadTemplateId: 'template-download',
+            downloadTemplateId: template-download',
             // The container for the list of files. If undefined, it is set to
             // an element with class "files" inside of the widget element:
             filesContainer: undefined,
@@ -78,7 +78,7 @@
             prependFiles: false,
             // The expected data type of the upload response, sets the dataType
             // option of the $.ajax upload requests:
-            dataType: 'json',
+            dataType: json',
 
             // The add callback is invoked as soon as files are added to the fileupload
             // widget (via file input selection, drag & drop or add API call).
@@ -93,7 +93,7 @@
                     data.files.valid = data.isValidated = that._validate(files);
                     data.context = that._renderUpload(files).data('data', data);
                     options.filesContainer[
-                        options.prependFiles ? 'prepend' : 'append'
+                        options.prependFiles ? prepend' : append'
                     ](data.context);
                     that._renderPreviews(files, data.context);
                     that._forceReflow(data.context);
@@ -120,17 +120,17 @@
                     }
                 }
                 if (data.context && data.dataType &&
-                        data.dataType.substr(0, 6) === 'iframe') {
+                        data.dataType.substr(0, 6) === iframe') {
                     // Iframe Transport does not support progress events.
                     // In lack of an indeterminate progress bar, we set
                     // the progress to 100%, showing the full animated bar:
                     data.context
                         .find('.progress').addClass(
-                            !$.support.transition && 'progress-animated'
+                            !$.support.transition && progress-animated'
                         )
                         .find('.bar').css(
-                            'width',
-                            parseInt(100, 10) + '%'
+                            width',
+                            parseInt(100, 10) + %'
                         );
                 }
                 return that._trigger('sent', e, data);
@@ -142,7 +142,7 @@
                 if (data.context) {
                     data.context.each(function (index) {
                         var file = ($.isArray(data.result) &&
-                                data.result[index]) || {error: 'emptyResult'};
+                                data.result[index]) || {error: emptyResult'};
                         if (file.error) {
                             that._adjustMaxNumberOfFiles(1);
                         }
@@ -181,7 +181,7 @@
                 that._adjustMaxNumberOfFiles(data.files.length);
                 if (data.context) {
                     data.context.each(function (index) {
-                        if (data.errorThrown !== 'abort') {
+                        if (data.errorThrown !== abort') {
                             var file = data.files[index];
                             file.error = file.error || data.errorThrown ||
                                 true;
@@ -208,7 +208,7 @@
                             );
                         }
                     });
-                } else if (data.errorThrown !== 'abort') {
+                } else if (data.errorThrown !== abort') {
                     that._adjustMaxNumberOfFiles(-data.files.length);
                     data.context = that._renderUpload(data.files)
                         .appendTo(that.options.filesContainer)
@@ -228,8 +228,8 @@
             progress: function (e, data) {
                 if (data.context) {
                     data.context.find('.bar').css(
-                        'width',
-                        parseInt(data.loaded / data.total * 100, 10) + '%'
+                        width',
+                        parseInt(data.loaded / data.total * 100, 10) + %'
                     );
                 }
             },
@@ -238,8 +238,8 @@
                 var $this = $(this);
                 $this.find('.fileupload-progress')
                     .find('.bar').css(
-                        'width',
-                        parseInt(data.loaded / data.total * 100, 10) + '%'
+                        width',
+                        parseInt(data.loaded / data.total * 100, 10) + %'
                     ).end()
                     .find('.progress-extended').each(function () {
                         $(this).html(
@@ -262,7 +262,7 @@
                 var that = $(this).data('fileupload');
                 that._transition($(this).find('.fileupload-progress')).done(
                     function () {
-                        $(this).find('.bar').css('width', '0%');
+                        $(this).find('.bar').css('width', 0%');
                         $(this).find('.progress-extended').html('&nbsp;');
                         that._trigger('stopped', e);
                     }
@@ -290,11 +290,11 @@
             var link = $(this),
                 url = link.prop('href'),
                 name = link.prop('download'),
-                type = 'application/octet-stream';
+                type = application/octet-stream';
             link.bind('dragstart', function (e) {
                 try {
                     e.originalEvent.dataTransfer.setData(
-                        'DownloadURL',
+                        DownloadURL',
                         [type, name, url].join(':')
                     );
                 } catch (err) {}
@@ -302,7 +302,7 @@
         },
 
         _adjustMaxNumberOfFiles: function (operand) {
-            if (typeof this.options.maxNumberOfFiles === 'number') {
+            if (typeof this.options.maxNumberOfFiles === number') {
                 this.options.maxNumberOfFiles += operand;
                 if (this.options.maxNumberOfFiles < 1) {
                     this._disableFileInputButton();
@@ -313,57 +313,57 @@
         },
 
         _formatFileSize: function (bytes) {
-            if (typeof bytes !== 'number') {
-                return '';
+            if (typeof bytes !== number') {
+                return ';
             }
             if (bytes >= 1000000000) {
-                return (bytes / 1000000000).toFixed(2) + ' GB';
+                return (bytes / 1000000000).toFixed(2) +  GB';
             }
             if (bytes >= 1000000) {
-                return (bytes / 1000000).toFixed(2) + ' MB';
+                return (bytes / 1000000).toFixed(2) +  MB';
             }
-            return (bytes / 1000).toFixed(2) + ' KB';
+            return (bytes / 1000).toFixed(2) +  KB';
         },
 
         _formatBitrate: function (bits) {
-            if (typeof bits !== 'number') {
-                return '';
+            if (typeof bits !== number') {
+                return ';
             }
             if (bits >= 1000000000) {
-                return (bits / 1000000000).toFixed(2) + ' Gbit/s';
+                return (bits / 1000000000).toFixed(2) +  Gbit/s';
             }
             if (bits >= 1000000) {
-                return (bits / 1000000).toFixed(2) + ' Mbit/s';
+                return (bits / 1000000).toFixed(2) +  Mbit/s';
             }
             if (bits >= 1000) {
-                return (bits / 1000).toFixed(2) + ' kbit/s';
+                return (bits / 1000).toFixed(2) +  kbit/s';
             }
-            return bits + ' bit/s';
+            return bits +  bit/s';
         },
 
         _formatTime: function (seconds) {
             var date = new Date(seconds * 1000),
                 days = parseInt(seconds / 86400, 10);
-            days = days ? days + 'd ' : '';
+            days = days ? days + d  : ';
             return days +
-                ('0' + date.getUTCHours()).slice(-2) + ':' +
-                ('0' + date.getUTCMinutes()).slice(-2) + ':' +
+                ('0' + date.getUTCHours()).slice(-2) + :' +
+                ('0' + date.getUTCMinutes()).slice(-2) + :' +
                 ('0' + date.getUTCSeconds()).slice(-2);
         },
 
         _formatPercentage: function (floatValue) {
-            return (floatValue * 100).toFixed(2) + ' %';
+            return (floatValue * 100).toFixed(2) +  %';
         },
 
         _renderExtendedProgress: function (data) {
-            return this._formatBitrate(data.bitrate) + ' | ' +
+            return this._formatBitrate(data.bitrate) +  |  +
                 this._formatTime(
                     (data.total - data.loaded) * 8 / data.bitrate
-                ) + ' | ' +
+                ) +  |  +
                 this._formatPercentage(
                     data.loaded / data.total
-                ) + ' | ' +
-                this._formatFileSize(data.loaded) + ' / ' +
+                ) +  |  +
+                this._formatFileSize(data.loaded) +  /  +
                 this._formatFileSize(data.total);
         },
 
@@ -375,22 +375,22 @@
             // maxNumberOfFiles before validation, so we check if
             // maxNumberOfFiles is below 0 (instead of below 1):
             if (this.options.maxNumberOfFiles < 0) {
-                return 'maxNumberOfFiles';
+                return maxNumberOfFiles';
             }
             // Files are accepted if either the file type or the file name
             // matches against the acceptFileTypes regular expression, as
             // only browsers with support for the File API report the type:
             if (!(this.options.acceptFileTypes.test(file.type) ||
                     this.options.acceptFileTypes.test(file.name))) {
-                return 'acceptFileTypes';
+                return acceptFileTypes';
             }
             if (this.options.maxFileSize &&
                     file.size > this.options.maxFileSize) {
-                return 'maxFileSize';
+                return maxFileSize';
             }
-            if (typeof file.size === 'number' &&
+            if (typeof file.size === number' &&
                     file.size < this.options.minFileSize) {
-                return 'minFileSize';
+                return minFileSize';
             }
             return null;
         },
@@ -455,7 +455,7 @@
             nodes.find('.preview span').each(function (index, element) {
                 var file = files[index];
                 if (options.previewSourceFileTypes.test(file.type) &&
-                        ($.type(options.previewSourceMaxFileSize) !== 'number' ||
+                        ($.type(options.previewSourceMaxFileSize) !== number' ||
                         file.size < options.previewSourceMaxFileSize)) {
                     that._processingQueue = that._processingQueue.pipe(function () {
                         var dfd = $.Deferred();
@@ -500,7 +500,7 @@
             var template = $(this).closest('.template-upload'),
                 data = template.data('data') || {};
             if (!data.jqXHR) {
-                data.errorThrown = 'abort';
+                data.errorThrown = abort';
                 e.data.fileupload._trigger('fail', e, data);
             } else {
                 data.jqXHR.abort();
@@ -513,7 +513,7 @@
             e.data.fileupload._trigger('destroy', e, {
                 context: button.closest('.template-download'),
                 url: button.attr('data-url'),
-                type: button.attr('data-type') || 'DELETE',
+                type: button.attr('data-type') || DELETE',
                 dataType: e.data.fileupload.options.dataType
             });
         },
@@ -569,7 +569,7 @@
             fileUploadButtonBar.find('.toggle')
                 .bind('change.' + ns, function (e) {
                     filesList.find('.delete input').prop(
-                        'checked',
+                        checked',
                         $(this).is(':checked')
                     );
                 });
@@ -587,20 +587,20 @@
             var eventData = {fileupload: this};
             this.options.filesContainer
                 .delegate(
-                    '.start button',
-                    'click.' + this.options.namespace,
+                    .start button',
+                    click.' + this.options.namespace,
                     eventData,
                     this._startHandler
                 )
                 .delegate(
-                    '.cancel button',
-                    'click.' + this.options.namespace,
+                    .cancel button',
+                    click.' + this.options.namespace,
                     eventData,
                     this._cancelHandler
                 )
                 .delegate(
-                    '.delete button',
-                    'click.' + this.options.namespace,
+                    .delete button',
+                    click.' + this.options.namespace,
                     eventData,
                     this._deleteHandler
                 );
@@ -611,9 +611,9 @@
             var options = this.options;
             this._destroyButtonBarEventHandlers();
             options.filesContainer
-                .undelegate('.start button', 'click.' + options.namespace)
-                .undelegate('.cancel button', 'click.' + options.namespace)
-                .undelegate('.delete button', 'click.' + options.namespace);
+                .undelegate('.start button', click.' + options.namespace)
+                .undelegate('.cancel button', click.' + options.namespace)
+                .undelegate('.delete button', click.' + options.namespace);
             parentWidget.prototype._destroyEventHandlers.call(this);
         },
 
@@ -662,9 +662,9 @@
         _create: function () {
             parentWidget.prototype._create.call(this);
             this._refreshOptionsList.push(
-                'filesContainer',
-                'uploadTemplateId',
-                'downloadTemplateId'
+                filesContainer',
+                uploadTemplateId',
+                downloadTemplateId'
             );
             if (!$.blueimpFP) {
                 this._processingQueue = $.Deferred().resolveWith(this).promise();

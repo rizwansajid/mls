@@ -24,7 +24,7 @@ $.jgrid = {
 		caption: "Suche...",
 		Find: "Suchen",
 		Reset: "Zurücksetzen",
-	    odata : ['gleich', 'ungleich', 'kleiner', 'kleiner gleich','größer','größer gleich', 'beginnt mit','beginnt nicht mit','ist in','ist nicht in','endet mit','endet nicht mit','enthält','enthält nicht'],
+	    odata : ['gleich', ungleich', kleiner', kleiner gleich','größer','größer gleich', beginnt mit','beginnt nicht mit','ist in','ist nicht in','endet mit','endet nicht mit','enthält','enthält nicht'],
 	    groupOps: [	{ op: "AND", text: "alle" },	{ op: "OR",  text: "mindestens eine" }	],
 		matchText: " erfülle",
 		rulesText: " Bedingung(en)"
@@ -47,7 +47,7 @@ $.jgrid = {
 		    email: "ist keine gültige E-Mail-Adresse",
 		    integer: "Bitte geben Sie eine Ganzzahl ein",
 			date: "Bitte geben Sie ein gültiges Datum ein",
-			url: "ist keine gültige URL. Präfix muss eingegeben werden ('http://' oder 'https://')",
+			url: "ist keine gültige URL. Präfix muss eingegeben werden ('http://' oder https://')",
 			nodefined : " ist nicht definiert!",
 			novalue : " Rückgabewert ist erforderlich!",
 			customarray : "Benutzerdefinierte Funktion sollte ein Array zurückgeben!",
@@ -92,9 +92,9 @@ $.jgrid = {
 		model : "colNames und colModel sind unterschiedlich lang!"
 	},
 	formatter : {
-		integer : {thousandsSeparator: ".", defaultValue: '0'},
-		number : {decimalSeparator:",", thousandsSeparator: ".", decimalPlaces: 2, defaultValue: '0,00'},
-		currency : {decimalSeparator:",", thousandsSeparator: ".", decimalPlaces: 2, prefix: "", suffix:" €", defaultValue: '0,00'},
+		integer : {thousandsSeparator: ".", defaultValue: 0'},
+		number : {decimalSeparator:",", thousandsSeparator: ".", decimalPlaces: 2, defaultValue: 0,00'},
+		currency : {decimalSeparator:",", thousandsSeparator: ".", decimalPlaces: 2, prefix: "", suffix:" €", defaultValue: 0,00'},
 		date : {
 			dayNames:   [
 				"So", "Mo", "Di", "Mi", "Do", "Fr", "Sa",
@@ -105,9 +105,9 @@ $.jgrid = {
 				"Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"
 			],
 			AmPm : ["am","pm","AM","PM"],
-			S: function (j) {return 'ter'},
-			srcformat: 'Y-m-d',
-			newformat: 'd.m.Y',
+			S: function (j) {return ter'},
+			srcformat: Y-m-d',
+			newformat: d.m.Y',
 			masks : {
 		        ISO8601Long: "Y-m-d H:i:s",
 		        ISO8601Short: "Y-m-d",
@@ -123,11 +123,11 @@ $.jgrid = {
 		    },
 		    reformatAfterEdit : false
 		},
-		baseLinkUrl: '',
-		showAction: '',
-	    target: '',
+		baseLinkUrl: ',
+		showAction: ',
+	    target: ',
 	    checkbox : {disabled:true},
-		idName : 'id'
+		idName : id'
 	}
 };
 })(jQuery);

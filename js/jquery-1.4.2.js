@@ -17,7 +17,7 @@
 
 // Define a local copy of jQuery
 var jQuery = function( selector, context ) {
-		// The jQuery object is actually just the init constructor 'enhanced'
+		// The jQuery object is actually just the init constructor enhanced'
 		return new jQuery.fn.init( selector, context );
 	},
 
@@ -207,7 +207,7 @@ jQuery.fn = jQuery.prototype = {
 	get: function( num ) {
 		return num == null ?
 
-			// Return a 'clean' array
+			// Return a clean' array
 			this.toArray() :
 
 			// Return just the object
@@ -597,7 +597,7 @@ jQuery.extend({
 		var ret = results || [];
 
 		if ( array != null ) {
-			// The window, strings (and functions) also have 'length'
+			// The window, strings (and functions) also have length'
 			// The extra typeof function check is to prevent crashes
 			// in Safari 2 (See: #3039)
 			if ( array.length == null || typeof array === "string" || jQuery.isFunction(array) || (typeof array !== "function" && array.setInterval) ) {
@@ -947,7 +947,7 @@ function now() {
 
 		document.body.appendChild( div );
 		jQuery.boxModel = jQuery.support.boxModel = div.offsetWidth === 2;
-		document.body.removeChild( div ).style.display = 'none';
+		document.body.removeChild( div ).style.display = none';
 
 		div = null;
 	});
@@ -2078,7 +2078,7 @@ var removeEvent = document.removeEventListener ?
 	};
 
 jQuery.Event = function( src ) {
-	// Allow instantiation without the 'new' keyword
+	// Allow instantiation without the new' keyword
 	if ( !this.preventDefault ) {
 		return new jQuery.Event( src );
 	}
@@ -3057,7 +3057,7 @@ var Expr = Sizzle.selectors = {
 		},
 		CHILD: function(match){
 			if ( match[1] === "nth" ) {
-				// parse equations like 'even', 'odd', '5', '2n', '3n+2', '4n-1', '-n+6'
+				// parse equations like even', odd', 5', 2n', 3n+2', 4n-1', -n+6'
 				var test = /(-?)(\d*)n((?:\+|-)?\d*)/.exec(
 					match[2] === "even" && "2n" || match[2] === "odd" && "2n+1" ||
 					!/\D/.test( match[2] ) && "0n+" + match[2] || match[2]);
@@ -3218,8 +3218,8 @@ var Expr = Sizzle.selectors = {
 		CHILD: function(elem, match){
 			var type = match[1], node = elem;
 			switch (type) {
-				case 'only':
-				case 'first':
+				case only':
+				case first':
 					while ( (node = node.previousSibling) )	 {
 						if ( node.nodeType === 1 ) { 
 							return false; 
@@ -3229,14 +3229,14 @@ var Expr = Sizzle.selectors = {
 						return true; 
 					}
 					node = elem;
-				case 'last':
+				case last':
 					while ( (node = node.nextSibling) )	 {
 						if ( node.nodeType === 1 ) { 
 							return false; 
 						}
 					}
 					return true;
-				case 'nth':
+				case nth':
 					var first = match[2], last = match[3];
 
 					if ( first === 1 && last === 0 ) {
@@ -4168,7 +4168,7 @@ jQuery.fn.extend({
 
 				return jQuery.clean([html.replace(rinlinejQuery, "")
 					// Handle the case in IE 8 where action=/test/> self-closes a tag
-					.replace(/=([^="'>\s]+\/)>/g, '="$1">')
+					.replace(/=([^="'>\s]+\/)>/g, ="$1">')
 					.replace(rleadingWhitespace, "")], ownerDocument)[0];
 			} else {
 				return this.cloneNode(true);
@@ -4360,7 +4360,7 @@ function buildFragment( args, nodes, scripts ) {
 	// Only cache "small" (1/2 KB) strings that are associated with the main document
 	// Cloning options loses the selected state, so don't cache them
 	// IE 6 doesn't like it when you put <object> or <embed> elements in a fragment
-	// Also, WebKit does not clone 'checked' attributes on cloneNode, so don't cache
+	// Also, WebKit does not clone checked' attributes on cloneNode, so don't cache
 	if ( args.length === 1 && typeof args[0] === "string" && args[0].length < 512 && doc === document &&
 		!rnocache.test( args[0] ) && (jQuery.support.checkClone || !rchecked.test( args[0] )) ) {
 
@@ -4418,7 +4418,7 @@ jQuery.extend({
 	clean: function( elems, context, fragment, scripts ) {
 		context = context || document;
 
-		// !context.createElement fails in IE with an error but returns typeof 'object'
+		// !context.createElement fails in IE with an error but returns typeof object'
 		if ( typeof context.createElement === "undefined" ) {
 			context = context.ownerDocument || context[0] && context[0].ownerDocument || document;
 		}
@@ -4835,7 +4835,7 @@ jQuery.fn.extend({
 						// Create a dummy div to hold the results
 						jQuery("<div />")
 							// inject the contents of the document in, removing the scripts
-							// to avoid any 'Permission Denied' errors in IE
+							// to avoid any Permission Denied' errors in IE
 							.append(res.responseText.replace(rscript, ""))
 
 							// Locate the specified elements
@@ -5774,7 +5774,7 @@ jQuery.fx.prototype = {
 		}
 	},
 
-	// Simple 'show' function
+	// Simple show' function
 	show: function() {
 		// Remember where we started, so that we can go back to it later
 		this.options.orig[this.prop] = jQuery.style( this.elem, this.prop );
@@ -5789,7 +5789,7 @@ jQuery.fx.prototype = {
 		jQuery( this.elem ).show();
 	},
 
-	// Simple 'hide' function
+	// Simple hide' function
 	hide: function() {
 		// Remember where we started, so that we can go back to it later
 		this.options.orig[this.prop] = jQuery.style( this.elem, this.prop );

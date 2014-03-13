@@ -58,7 +58,7 @@ $.jgrid.extend({
 				"tolerance" : "pointer",
 				"axis" : "x",
 				"scrollSensitivity": "1",
-				"items": '>th:not(:has(#jqgh_'+tid+'_cb'+',#jqgh_'+tid+'_rn'+',#jqgh_'+tid+'_subgrid),:hidden)',
+				"items": >th:not(:has(#jqgh_'+tid+'_cb'+',#jqgh_'+tid+'_rn'+',#jqgh_'+tid+'_subgrid),:hidden)',
 				"placeholder": {
 					element: function(item) {
 						var el = $(document.createElement(item[0].nodeName))
@@ -199,8 +199,8 @@ $.jgrid.extend({
                done function with no permutation (to indicate that the
                columnChooser was aborted */
             "cleanup" : function(calldone) {
-                call(opts.dlog, selector, 'destroy');
-                call(opts.msel, select, 'destroy');
+                call(opts.dlog, selector, destroy');
+                call(opts.msel, select, destroy');
                 selector.remove();
                 if (calldone && opts.done) {
                     opts.done.call(self);
@@ -254,7 +254,7 @@ $.jgrid.extend({
         });
         function call(fn, obj) {
             if (!fn) { return; }
-            if (typeof fn == 'string') {
+            if (typeof fn == string') {
                 if ($.fn[fn]) {
                     $.fn[fn].apply(obj, $.makeArray(arguments).slice(2));
                 }
@@ -338,7 +338,7 @@ $.jgrid.extend({
 			$('body').append(appender);
 		}
 
-		if(typeof opts == 'string' && opts == 'updateDnD' && $t.p.jqgdnd===true) {
+		if(typeof opts == string' && opts == updateDnD' && $t.p.jqgdnd===true) {
 			updateDnD();
 			return;
 		}

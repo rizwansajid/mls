@@ -38,7 +38,7 @@
                 email: "is geen geldig e-mailadres",
                 integer: "Voer a.u.b. een geldig getal in",
                 date: "Voer a.u.b. een geldige waarde in",
-                url: "is geen geldige URL. Prefix is verplicht ('http://' or 'https://')",
+                url: "is geen geldige URL. Prefix is verplicht ('http://' or https://')",
                 nodefined : " is not defined!",
                 novalue : " return value is required!",
                 customarray : "Custom function should return array!",
@@ -85,7 +85,7 @@
             errcap: "Fout",
             nourl: "Er is geen URL gedefinieerd",
             norecords: "Geen data om te verwerken",
-            model: "Lengte van 'colNames' is niet gelijk aan 'colModel'!"
+            model: "Lengte van colNames' is niet gelijk aan colModel'!"
         },
         formatter:
         {

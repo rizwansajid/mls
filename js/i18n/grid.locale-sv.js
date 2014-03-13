@@ -18,7 +18,7 @@ $.jgrid = {
 		caption: "Sök Poster - Ange sökvillkor",
 		Find: "Sök",
 		Reset: "Nollställ Villkor",
-		odata : ['lika', 'ej lika', 'mindre', 'mindre eller lika','större','större eller lika', 'börjar med','börjar inte med','tillhör','tillhör inte','slutar med','slutar inte med','innehåller','innehåller inte'],
+		odata : ['lika', ej lika', mindre', mindre eller lika','större','större eller lika', börjar med','börjar inte med','tillhör','tillhör inte','slutar med','slutar inte med','innehåller','innehåller inte'],
 		groupOps: [	{ op: "AND", text: "alla" },	{ op: "OR",  text: "eller" }	],
 		matchText: " träff",
 		rulesText: " regler"
@@ -41,7 +41,7 @@ $.jgrid = {
 	        email: "är inte korrekt e-post adress",
 	        integer: "Var god ange korrekt heltal",
 	        date: "Var god ange korrekt datum",
-	        url: "är inte en korrekt URL. Prefix måste anges ('http://' or 'https://')",
+	        url: "är inte en korrekt URL. Prefix måste anges ('http://' or https://')",
 	        nodefined : " är inte definierad!",
 	        novalue : " returvärde måste anges!",
 	        customarray : "Custom funktion måste returnera en vektor!",
@@ -86,9 +86,9 @@ $.jgrid = {
 		model : "Antal colNames <> colModel!"
 	},
 	formatter : {
-		integer : {thousandsSeparator: " ", defaultValue: '0'},
-		number : {decimalSeparator:",", thousandsSeparator: " ", decimalPlaces: 2, defaultValue: '0,00'},
-		currency : {decimalSeparator:",", thousandsSeparator: " ", decimalPlaces: 2, prefix: "", suffix:"Kr", defaultValue: '0,00'},
+		integer : {thousandsSeparator: " ", defaultValue: 0'},
+		number : {decimalSeparator:",", thousandsSeparator: " ", decimalPlaces: 2, defaultValue: 0,00'},
+		currency : {decimalSeparator:",", thousandsSeparator: " ", decimalPlaces: 2, prefix: "", suffix:"Kr", defaultValue: 0,00'},
 		date : {
 			dayNames:   [
 				"Sön", "Mån", "Tis", "Ons", "Tor", "Fre", "Lör",
@@ -99,9 +99,9 @@ $.jgrid = {
 				"Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"
 			],
 			AmPm : ["fm","em","FM","EM"],
-			S: function (j) {return j < 11 || j > 13 ? ['st', 'nd', 'rd', 'th'][Math.min((j - 1) % 10, 3)] : 'th'},
-			srcformat: 'Y-m-d',
-			newformat: 'Y-m-d',
+			S: function (j) {return j < 11 || j > 13 ? ['st', nd', rd', th'][Math.min((j - 1) % 10, 3)] : th'},
+			srcformat: Y-m-d',
+			newformat: Y-m-d',
 			masks : {
 	            ISO8601Long:"Y-m-d H:i:s",
 	            ISO8601Short:"Y-m-d",
@@ -117,11 +117,11 @@ $.jgrid = {
 			},
 			reformatAfterEdit : false
 		},
-		baseLinkUrl: '',
-		showAction: '',
-		target: '',
+		baseLinkUrl: ',
+		showAction: ',
+		target: ',
 		checkbox : {disabled:true},
-		idName : 'id'
+		idName : id'
 	}
 };
 })(jQuery);

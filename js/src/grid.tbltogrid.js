@@ -26,16 +26,16 @@ jQuery(selector).each(function() {
 	jQuery('th', jQuery(this)).each(function() {
 		if (colModel.length === 0 && selectable) {
 			colModel.push({
-				name: '__selection__',
-				index: '__selection__',
+				name: __selection__',
+				index: __selection__',
 				width: 0,
 				hidden: true
 			});
 			colNames.push('__selection__');
 		} else {
 			colModel.push({
-				name: jQuery(this).attr("id") || jQuery.trim(jQuery.jgrid.stripHtml(jQuery(this).html())).split(' ').join('_'),
-				index: jQuery(this).attr("id") || jQuery.trim(jQuery.jgrid.stripHtml(jQuery(this).html())).split(' ').join('_'),
+				name: jQuery(this).attr("id") || jQuery.trim(jQuery.jgrid.stripHtml(jQuery(this).html())).split(' ).join('_'),
+				index: jQuery(this).attr("id") || jQuery.trim(jQuery.jgrid.stripHtml(jQuery(this).html())).split(' ).join('_'),
 				width: jQuery(this).width() || 150
 			});
 			colNames.push(jQuery(this).html());

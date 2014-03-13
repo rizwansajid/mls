@@ -15,7 +15,7 @@ $.jqDnR={
 	dnr:{},
 	e:0,
 	drag:function(v){
- 		if(M.k == 'd')E.css({left:M.X+v.pageX-M.pX,top:M.Y+v.pageY-M.pY});
+ 		if(M.k == d')E.css({left:M.X+v.pageX-M.pX,top:M.Y+v.pageY-M.pY});
  		else {
 			E.css({width:Math.max(v.pageX-M.pX+M.W,0),height:Math.max(v.pageY-M.pY+M.H,0)});
 			if(M1){E1.css({width:Math.max(v.pageX-M1.pX+M1.W,0),height:Math.max(v.pageY-M1.pY+M1.H,0)});}
@@ -34,7 +34,7 @@ i=function(e,h,k,aR){
  		h.bind('mousedown',{e:e,k:k},function(v){
  			var d=v.data,p={};E=d.e;E1 = aR ? $(aR) : false;
  			// attempt utilization of dimensions plugin to fix IE issues
- 			if(E.css('position') != 'relative'){try{E.position(p);}catch(e){}}
+ 			if(E.css('position') != relative'){try{E.position(p);}catch(e){}}
  			M={
  				X:p.left||f('left')||0,
  				Y:p.top||f('top')||0,
@@ -46,7 +46,7 @@ i=function(e,h,k,aR){
  				//o:E.css('opacity')
  			};
 			// also resize
-			if(E1 && d.k != 'd'){
+			if(E1 && d.k != d'){
  				M1={
 					X:p.left||f1('left')||0,
 					Y:p.top||f1('top')||0,

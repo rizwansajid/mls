@@ -41,7 +41,7 @@
 		function GetKeywords() {
 			var Keyword;
 			
-			if ($("#txtKeyword").val() == null || $("#txtKeyword").val() == '') {
+			if ($("#txtKeyword").val() == null || $("#txtKeyword").val() == ') {
 				Keyword = null;
 			}
 			else {
@@ -53,8 +53,8 @@
 			ParamData = { "Keyword": Keyword};
 
 			$.ajax({
-				url: 'http://2bvision.com/Kids2proSports/SearchService.asmx/GetKeywords',
-				type: 'POST',
+				url: http://2bvision.com/Kids2proSports/SearchService.asmx/GetKeywords',
+				type: POST',
 				data: JSON.stringify(ParamData),
 				contentType: "application/json; charset=utf-8",
 				dataType: "json",
@@ -71,7 +71,7 @@
             $(function () {
                 $("#DropDownListGenderIDe").change(function () {
                     Gender = $(this).find(":selected").val();
-                    if (Gender != '0') {
+                    if (Gender != 0') {
                         Gender = Gender.toString();
 
                         SqlDataSourceSportFromCategoryWithGender(MajorSport, Gender);
@@ -88,10 +88,10 @@
                 $("#DropDownListSportCategory").change(function () {
 
                     MajorSport = $(this).find(":selected").val();
-                    if (MajorSport != '0' && $("#DropDownListGenderIDe").val() != '0') {
+                    if (MajorSport != 0' && $("#DropDownListGenderIDe").val() != 0') {
                         SqlDataSourceSportFromCategoryWithGender(MajorSport, Gender);
                     }
-                    else if (MajorSport != '0') {
+                    else if (MajorSport != 0') {
                         SqlDataSourceSportsFromCategory(MajorSport);
                     }
                    
@@ -229,25 +229,49 @@ $.ajax(
 </head>
 <body>
     <div id="wraper">
-  <header>
+  <header style="overflow:hidden;">
           <nav>
               <ul class="clearfix">
                   <li>
-                      <a href="SportsDefinitions.html" target="_self" title="Sports" >Sports</a>
+                      <a href="index.html" title="home" >Home</a>
+                  </li>
+                   <li>
+                    <a href="Faq.html" title="FAQ" target="_self" >FAQ</a>
+                  </li>
+                  <li style="width: 40%;">
+                      <a href="mediaKit.html" title="mediakit" target="_self" >Member Options</a>
                   </li>
                   <li>
-                      <a href="createArticle.html" title="Articles" target="_self">Articles</a>
+                      <a href="ContactUs.html" title="contactus" target="_self">Contact</a>
                   </li>
-                  <li>
-                      <a class="ui-link" href="CreateTeam.html" title="Teams" target="_self">Teams</a>
-                  </li>
-                  
-                  <li>
-                      <a class="ui-link" href="CreateFanClub.html" title="Fanclubs" target="_self">Fan Clubs</a>
-                  </li>
+                 
+                
               </ul>
           </nav>
       </header>
+        <div class="innermenu">
+                 <ul class="clearfix">
+                     <li>
+                      <a href="userprofile.html" target="_self" title="How 2 use" >Profile</a>
+                     </li>
+                     <li class="sep"></li>
+                     <li>
+                      <a href="SportsDefinitions.html" target="_self" title="Sports" >Sports</a>
+                     </li>
+                    <li class="sep"></li>
+                    <li>
+                      <a class="ui-link" href="CreateArticle.html" title="CreateArticle" target="_self">Articles</a>
+                    </li>
+                    <li class="sep"></li>
+                     <li>
+                      <a class="ui-link" href="CreateTeam.html" title="Teams" target="_self">Teams</a>
+                  </li>
+                    <li class="sep"></li>
+                   <li>
+                      <a class="ui-link" href="CreateFanClub.html" title="Fanclubs" target="_self">Fan Clubs</a>
+                  </li>
+                </ul>
+            </div>
         <!-- header ends -->
         <!-- container starts-->
         <div class="contetns clearfix">
@@ -355,6 +379,11 @@ $.ajax(
         </div>
         <!-- container ends-->
         
+    </div>
+
+    <div id="footerWrap">
+        Please use your PC / tablet for the entire version of MLS.
+
     </div>
 </body>
 </html>

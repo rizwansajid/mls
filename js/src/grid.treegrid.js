@@ -25,12 +25,12 @@ $.jgrid.extend({
 				var ind = $t.rows[i].id, dind = $t.p._index[ind], expan;
 				ldat = $t.p.data[dind];
 				//$t.rows[i].level = ldat[level];
-				if($t.p.treeGridModel == 'nested') {
+				if($t.p.treeGridModel == nested') {
 					if(!ldat[isLeaf]) {
 					lft = parseInt(ldat[$t.p.treeReader.left_field],10);
 					rgt = parseInt(ldat[$t.p.treeReader.right_field],10);
 					// NS Model
-						ldat[isLeaf] = (rgt === lft+1) ? 'true' : 'false';
+						ldat[isLeaf] = (rgt === lft+1) ? true' : false';
 						$t.rows[i].cells[$t.p._treeleafpos].innerHTML = ldat[isLeaf];
 					}
 				}
@@ -135,9 +135,9 @@ $.jgrid.extend({
 			if($t.p.rowTotal === null ) { $t.p.rowNum = 10000; }
 			$t.p.multiselect = false;$t.p.rowList = [];
 			$t.p.expColInd = 0;
-			pico = 'ui-icon-triangle-1-' + ($t.p.direction=="rtl" ? 'w' : 'e');
+			pico = ui-icon-triangle-1-' + ($t.p.direction=="rtl" ? w' : e');
 			$t.p.treeIcons = $.extend({plus:pico,minus:'ui-icon-triangle-1-s',leaf:'ui-icon-radio-off'},$t.p.treeIcons || {});
-			if($t.p.treeGridModel == 'nested') {
+			if($t.p.treeGridModel == nested') {
 				$t.p.treeReader = $.extend({
 					level_field: "level",
 					left_field:"lft",
@@ -147,7 +147,7 @@ $.jgrid.extend({
 					loaded: "loaded",
 					icon_field: "icon"
 				},$t.p.treeReader);
-			} else if($t.p.treeGridModel == 'adjacency') {
+			} else if($t.p.treeGridModel == adjacency') {
 				$t.p.treeReader = $.extend({
 						level_field: "level",
 						parent_id_field: "parent",
@@ -222,7 +222,7 @@ $.jgrid.extend({
 			var $t = this;
 			if(!$t.grid || !$t.p.treeGrid) {return;}
 			switch ($t.p.treeGridModel) {
-				case 'nested' :
+				case nested' :
 					var level = $t.p.treeReader.level_field;
 					$($t.p.data).each(function(i){
 						if(parseInt(this[level],10) === parseInt($t.p.tree_root_level,10)) {
@@ -230,7 +230,7 @@ $.jgrid.extend({
 						}
 					});
 					break;
-				case 'adjacency' :
+				case adjacency' :
 					var parent_id = $t.p.treeReader.parent_id_field;
 					$($t.p.data).each(function(i){
 						if(this[parent_id] === null || String(this[parent_id]).toLowerCase() == "null") {
@@ -248,11 +248,11 @@ $.jgrid.extend({
 			if(!this.grid || !this.p.treeGrid) {return;}
 			var $t = this;
 			switch ($t.p.treeGridModel) {
-				case 'nested' :
+				case nested' :
 					var level = $t.p.treeReader.level_field;
 					ret = parseInt(rc[level],10) - parseInt($t.p.tree_root_level,10);
 					break;
-				case 'adjacency' :
+				case adjacency' :
 					ret = $($t).jqGrid("getNodeAncestors",rc).length;
 					break;
 			}
@@ -265,7 +265,7 @@ $.jgrid.extend({
 			var $t = this;
 			if(!$t.grid || !$t.p.treeGrid) {return;}
 			switch ($t.p.treeGridModel) {
-				case 'nested' :
+				case nested' :
 					var lftc = $t.p.treeReader.left_field,
 					rgtc = $t.p.treeReader.right_field,
 					levelc = $t.p.treeReader.level_field,
@@ -277,7 +277,7 @@ $.jgrid.extend({
 						}
 					});
 					break;
-				case 'adjacency' :
+				case adjacency' :
 					var parent_id = $t.p.treeReader.parent_id_field,
 					dtid = $t.p.localReader.id;
 					$(this.p.data).each(function(i,val){
@@ -297,7 +297,7 @@ $.jgrid.extend({
 			var $t = this;
 			if(!$t.grid || !$t.p.treeGrid) {return;}
 			switch ($t.p.treeGridModel) {
-				case 'nested' :
+				case nested' :
 					var lftc = $t.p.treeReader.left_field,
 					rgtc = $t.p.treeReader.right_field,
 					levelc = $t.p.treeReader.level_field,
@@ -308,7 +308,7 @@ $.jgrid.extend({
 						}
 					});
 					break;
-				case 'adjacency' :
+				case adjacency' :
 					var parent_id = $t.p.treeReader.parent_id_field,
 					dtid = $t.p.localReader.id;
 					$(this.p.data).each(function(i,val){
@@ -327,7 +327,7 @@ $.jgrid.extend({
 			var $t = this, len;
 			if(!$t.grid || !$t.p.treeGrid) {return;}
 			switch ($t.p.treeGridModel) {
-				case 'nested' :
+				case nested' :
 					var lftc = $t.p.treeReader.left_field,
 					rgtc = $t.p.treeReader.right_field,
 					levelc = $t.p.treeReader.level_field,
@@ -338,7 +338,7 @@ $.jgrid.extend({
 						}
 					});
 					break;
-				case 'adjacency' :
+				case adjacency' :
 					if(rc) {
 					result.push(rc);
 					var parent_id = $t.p.treeReader.parent_id_field,
@@ -427,14 +427,14 @@ $.jgrid.extend({
 					$("div.treeclick",rc1).removeClass(this.p.treeIcons.plus+" tree-plus").addClass(this.p.treeIcons.minus+" tree-minus");
 					this.p.treeANode = rc1.rowIndex;
 					this.p.datatype = this.p.treedatatype;
-					if(this.p.treeGridModel == 'nested') {
+					if(this.p.treeGridModel == nested') {
 						$(this).jqGrid("setGridParam",{postData:{nodeid:id,n_left:rc[lft],n_right:rc[rgt],n_level:rc[level]}});
 					} else {
 						$(this).jqGrid("setGridParam",{postData:{nodeid:id,parentid:rc[parent],n_level:rc[level]}} );
 					}
 					$(this).trigger("reloadGrid");
 					rc[loaded] = true;
-					if(this.p.treeGridModel == 'nested') {
+					if(this.p.treeGridModel == nested') {
 						$(this).jqGrid("setGridParam",{postData:{nodeid:'',n_left:'',n_right:'',n_level:''}});
 					} else {
 						$(this).jqGrid("setGridParam",{postData:{nodeid:'',parentid:'',n_level:''}}); 
@@ -474,7 +474,7 @@ $.jgrid.extend({
 			}
 			$.each(records, function(index, row) {
 				var id  = $.jgrid.getAccessor(this,$t.p.localReader.id);
-				$('#'+$t.p.id+ ' tbody tr:eq('+index+')').after($('tr#'+id,$t.grid.bDiv));
+				$('#'+$t.p.id+  tbody tr:eq('+index+')').after($('tr#'+id,$t.grid.bDiv));
 			});
 			query = null;roots=null;records=null;
 		});
@@ -559,7 +559,7 @@ $.jgrid.extend({
 			loaded = $t.p.treeReader.loaded,
 			method, parentindex, parentdata, parentlevel, i, len, max=0, rowind = parentid, leaf, maxright;
 
-			if ( typeof nodeid === 'undefined' || nodeid === null ) {
+			if ( typeof nodeid === undefined' || nodeid === null ) {
 				i = $t.p.data.length-1;
 				if(	i>= 0 ) {
 					while(i>=0){max = Math.max(max, parseInt($t.p.data[i][$t.p.localReader.id],10)); i--;}
@@ -572,11 +572,11 @@ $.jgrid.extend({
 				if ( parentid === undefined  || parentid === null || parentid==="") {
 					parentid = null;
 					rowind = null;
-					method = 'last';
+					method = last';
 					parentlevel = $t.p.tree_root_level;
 					i = $t.p.data.length+1;
 				} else {
-					method = 'after';
+					method = after';
 					parentindex = $t.p._index[parentid];
 					parentdata = $t.p.data[parentindex];
 					parentid = parentdata[$t.p.localReader.id];
@@ -631,7 +631,7 @@ $.jgrid.extend({
 					data[left] = maxright;
 					data[right]= maxright+1;
 				} else {
-					maxright = parseInt( $($t).jqGrid('getCol', right, false, 'max'), 10);
+					maxright = parseInt( $($t).jqGrid('getCol', right, false, max'), 10);
 					res = $.jgrid.from($t.p.data)
 						.greater(left,maxright,{stype:'integer'})
 						.select();

@@ -13,19 +13,19 @@
 /*global define, window, document, Blob, FormData, location */
 
 (function (factory) {
-    'use strict';
-    if (typeof define === 'function' && define.amd) {
+    use strict';
+    if (typeof define === function' && define.amd) {
         // Register as an anonymous AMD module:
         define([
-            'jquery',
-            'jquery.ui.widget'
+            jquery',
+            jquery.ui.widget'
         ], factory);
     } else {
         // Browser globals:
         factory(window.jQuery);
     }
 }(function ($) {
-    'use strict';
+    use strict';
 
     // The FileReader API is not actually used, but works as feature detection,
     // as e.g. Safari supports XHR file uploads via the FormData API,
@@ -85,7 +85,7 @@
             // origin server, for cross-domain iframe transport uploads:
             redirect: undefined,
             // The parameter name for the redirect url, sent as part of the form
-            // data and set to 'redirect' if this option is empty:
+            // data and set to redirect' if this option is empty:
             redirectParamName: undefined,
             // Set the following option to the location of a postMessage window,
             // to enable postMessage transport uploads:
@@ -177,11 +177,11 @@
 
         // A list of options that require a refresh after assigning a new value:
         _refreshOptionsList: [
-            'namespace',
-            'dropZone',
-            'fileInput',
-            'multipart',
-            'forceIframeTransport'
+            namespace',
+            dropZone',
+            fileInput',
+            multipart',
+            forceIframeTransport'
         ],
 
         _BitrateTimer: function () {
@@ -207,7 +207,7 @@
 
         _getFormData: function (options) {
             var formData;
-            if (typeof options.formData === 'function') {
+            if (typeof options.formData === function') {
                 return options.formData(options.form);
             }
 			if ($.isArray(options.formData)) {
@@ -309,9 +309,9 @@
                 // via Access-Control-Allow-Headers or removed using
                 // the beforeSend callback:
                 options.headers = $.extend(options.headers, {
-                    'X-File-Name': file.name,
-                    'X-File-Type': file.type,
-                    'X-File-Size': file.size
+                    X-File-Name': file.name,
+                    X-File-Type': file.type,
+                    X-File-Size': file.size
                 });
                 if (!options.blob) {
                     // Non-chunked non-multipart upload:
@@ -319,7 +319,7 @@
                     options.data = file;
                 } else if (!multipart) {
                     // Chunked non-multipart upload:
-                    options.contentType = 'application/octet-stream';
+                    options.contentType = application/octet-stream';
                     options.data = options.blob;
                 }
             }
@@ -377,14 +377,14 @@
 
         _initIframeSettings: function (options) {
             // Setting the dataType to iframe enables the iframe transport:
-            options.dataType = 'iframe ' + (options.dataType || '');
+            options.dataType = iframe  + (options.dataType || ');
             // The iframe transport accepts a serialized array as form data:
             options.formData = this._getFormData(options);
             // Add redirect url to form data on cross-domain uploads:
             if (options.redirect && $('<a></a>').prop('href', options.url)
                     .prop('host') !== location.host) {
                 options.formData.push({
-                    name: options.redirectParamName || 'redirect',
+                    name: options.redirectParamName || redirect',
                     value: options.redirect
                 });
             }
@@ -401,10 +401,10 @@
                 if (options.postMessage) {
                     // Setting the dataType to postmessage enables the
                     // postMessage transport:
-                    options.dataType = 'postmessage ' + (options.dataType || '');
+                    options.dataType = postmessage  + (options.dataType || ');
                 }
             } else {
-                this._initIframeSettings(options, 'iframe');
+                this._initIframeSettings(options, iframe');
             }
         },
 
@@ -415,7 +415,7 @@
                 paramName = [];
                 fileInput.each(function () {
                     var input = $(this),
-                        name = input.prop('name') || 'files[]',
+                        name = input.prop('name') || files[]',
                         i = (input.prop('files') || [1]).length;
                     while (i) {
                         paramName.push(name);
@@ -423,7 +423,7 @@
                     }
                 });
                 if (!paramName.length) {
-                    paramName = [fileInput.prop('name') || 'files[]'];
+                    paramName = [fileInput.prop('name') || files[]'];
                 }
             } else if (!$.isArray(paramName)) {
                 paramName = [paramName];
@@ -442,10 +442,10 @@
                 options.url = options.form.prop('action') || location.href;
             }
             // The HTTP request method must be "POST" or "PUT":
-            options.type = (options.type || options.form.prop('method') || '')
+            options.type = (options.type || options.form.prop('method') || ')
                 .toUpperCase();
-            if (options.type !== 'POST' && options.type !== 'PUT') {
-                options.type = 'POST';
+            if (options.type !== POST' && options.type !== PUT') {
+                options.type = POST';
             }
         },
 
@@ -506,11 +506,11 @@
                 return true;
             }
             if (ub >= fs) {
-                file.error = 'uploadedBytes';
+                file.error = uploadedBytes';
                 return this._getXHRPromise(
                     false,
                     options.context,
-                    [null, 'error', file.error]
+                    [null, error', file.error]
                 );
             }
             // n is the number of blobs to upload,
@@ -686,7 +686,7 @@
                 // which is delegated to the jqXHR object of the current upload,
                 // and jqXHR callbacks mapped to the equivalent Promise methods:
                 pipe.abort = function () {
-                    var args = [undefined, 'abort', 'abort'];
+                    var args = [undefined, abort', abort'];
                     if (!jqXHR) {
                         if (slot) {
                             slot.rejectWith(args);
@@ -787,7 +787,7 @@
                 // If the files property is not available, the browser does not
                 // support the File API and we add a pseudo File object with
                 // the input value as name with path information removed:
-                data.files = [{name: e.target.value.replace(/^.*\\/, '')}];
+                data.files = [{name: e.target.value.replace(/^.*\\/, ')}];
             }
             if (that.options.replaceFileInput) {
                 that._replaceFileInput(data.fileInput);
@@ -838,7 +838,7 @@
                 return false;
             }
             if (dataTransfer) {
-                dataTransfer.dropEffect = dataTransfer.effectAllowed = 'copy';
+                dataTransfer.dropEffect = dataTransfer.effectAllowed = copy';
             }
             e.preventDefault();
         },

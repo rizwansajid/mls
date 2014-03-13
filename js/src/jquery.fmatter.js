@@ -19,22 +19,22 @@
 	//example {id:1234,}
 	$.extend($.fmatter,{
 		isBoolean : function(o) {
-			return typeof o === 'boolean';
+			return typeof o === boolean';
 		},
 		isObject : function(o) {
-			return (o && (typeof o === 'object' || $.isFunction(o))) || false;
+			return (o && (typeof o === object' || $.isFunction(o))) || false;
 		},
 		isString : function(o) {
-			return typeof o === 'string';
+			return typeof o === string';
 		},
 		isNumber : function(o) {
-			return typeof o === 'number' && isFinite(o);
+			return typeof o === number' && isFinite(o);
 		},
 		isNull : function(o) {
 			return o === null;
 		},
 		isUndefined : function(o) {
-			return typeof o === 'undefined';
+			return typeof o === undefined';
 		},
 		isValue : function (o) {
 			return (this.isObject(o) || this.isString(o) || this.isNumber(o) || this.isBoolean(o));
@@ -125,11 +125,11 @@
 			timezone = /\b(?:[PMCEA][SDP]T|(?:Pacific|Mountain|Central|Eastern|Atlantic) (?:Standard|Daylight|Prevailing) Time|(?:GMT|UTC)(?:[-+]\d{4})?)\b/g,
 			timezoneClip = /[^-+\dA-Z]/g,
 			msDateRegExp = new RegExp("^\/Date\\((([-+])?[0-9]+)(([-+])([0-9]{2})([0-9]{2}))?\\)\/$"),
-			msMatch = ((typeof date === 'string') ? date.match(msDateRegExp): null),
+			msMatch = ((typeof date === string') ? date.match(msDateRegExp): null),
 			pad = function (value, length) {
 				value = String(value);
 				length = parseInt(length,10) || 2;
-				while (value.length < length)  { value = '0' + value; }
+				while (value.length < length)  { value = 0' + value; }
 				return value;
 			},
 			ts = {m : 1, d : 1, y : 1970, h : 0, i : 0, s : 0, u:0},
@@ -151,7 +151,7 @@
 				timestamp = new Date(parseInt(msMatch[1], 10));
 				if (msMatch[3]) {
 					var offset = Number(msMatch[5]) * 60 + Number(msMatch[6]);
-					offset *= ((msMatch[4] == '-') ? 1 : -1);
+					offset *= ((msMatch[4] == -') ? 1 : -1);
 					offset -= timestamp.getTimezoneOffset();
 					timestamp.setTime(Number(Number(timestamp) + (offset * 60 * 1000)));
 				}
@@ -160,11 +160,11 @@
 				format = format.split(/[\\\/:_;.,\t\T\s-]/);
 				// parsing for month names
 				for(k=0,hl=format.length;k<hl;k++){
-					if(format[k] == 'M') {
+					if(format[k] == M') {
 						dM = $.inArray(date[k],dateFormat.i18n.monthNames);
 						if(dM !== -1 && dM < 12){date[k] = dM+1;}
 					}
-					if(format[k] == 'F') {
+					if(format[k] == F') {
 						dM = $.inArray(date[k],dateFormat.i18n.monthNames);
 						if(dM !== -1 && dM > 11){date[k] = dM+1-12;}
 					}
@@ -186,7 +186,7 @@
 			if( newformat in opts.masks )  {
 				newformat = opts.masks[newformat];
 			} else if ( !newformat ) {
-				newformat = 'Y-m-d';
+				newformat = Y-m-d';
 			}
 			var 
 				G = timestamp.getHours(),
@@ -208,7 +208,7 @@
 					l: dateFormat.i18n.dayNames[w + 7],
 					N: N,
 					S: opts.S(j),
-					//j < 11 || j > 13 ? ['st', 'nd', 'rd', 'th'][Math.min((j - 1) % 10, 3)] : 'th',
+					//j < 11 || j > 13 ? ['st', nd', rd', th'][Math.min((j - 1) % 10, 3)] : th',
 					w: w,
 					z: z,
 					// Week
@@ -218,16 +218,16 @@
 					m: pad(n),
 					M: dateFormat.i18n.monthNames[n - 1],
 					n: n,
-					t: '?',
+					t: ?',
 					// Year
-					L: '?',
-					o: '?',
+					L: ?',
+					o: ?',
 					Y: Y,
 					y: String(Y).substring(2),
 					// Time
 					a: G < 12 ? opts.AmPm[0] : opts.AmPm[1],
 					A: G < 12 ? opts.AmPm[2] : opts.AmPm[3],
-					B: '?',
+					B: ?',
 					g: G % 12 || 12,
 					G: G,
 					h: pad(G % 12 || 12),
@@ -236,15 +236,15 @@
 					s: pad(s),
 					u: u,
 					// Timezone
-					e: '?',
-					I: '?',
+					e: ?',
+					I: ?',
 					O: (o > 0 ? "-" : "+") + pad(Math.floor(Math.abs(o) / 60) * 100 + Math.abs(o) % 60, 4),
-					P: '?',
+					P: ?',
 					T: (String(timestamp).match(timezone) || [""]).pop().replace(timezoneClip, ""),
-					Z: '?',
+					Z: ?',
 					// Full Date/Time
-					c: '?',
-					r: '?',
+					c: ?',
+					r: ?',
 					U: Math.floor(timestamp / 1000)
 				};	
 			return newformat.replace(token, function ($0) {
@@ -279,7 +279,7 @@
 		if(!$.fmatter.isUndefined(opts.colModel.formatoptions)) {
 			op = $.extend({},op,opts.colModel.formatoptions);
 		}
-		if(op.target) {target = 'target=' + op.target;}
+		if(op.target) {target = target=' + op.target;}
 		if(!$.fmatter.isEmpty(cellval)) {
 			return "<a "+target+" href=\"" + cellval + "\">" + cellval + "</a>";
 		}else {
@@ -292,8 +292,8 @@
 		if(!$.fmatter.isUndefined(opts.colModel.formatoptions)) {
 			op = $.extend({},op,opts.colModel.formatoptions);
 		}
-		if(op.target) {target = 'target=' + op.target;}
-		idUrl = op.baseLinkUrl+op.showAction + '?'+ op.idName+'='+opts.rowId+op.addParam;
+		if(op.target) {target = target=' + op.target;}
+		idUrl = op.baseLinkUrl+op.showAction + ?'+ op.idName+'='+opts.rowId+op.addParam;
 		if($.fmatter.isString(cellval) || $.fmatter.isNumber(cellval)) {	//add this one even if its blank string
 			return "<a "+target+" href=\"" + idUrl + "\">" + cellval + "</a>";
 		}else {
@@ -433,29 +433,29 @@
 		}
 		switch(act)
 		{
-			case 'edit':
+			case edit':
 				$('#'+gid).jqGrid('editRow',rid, op.keys, op.onEdit, op.onSuccess, op.url, op.extraparam, saverow, op.onError,restorerow);
 				$("tr#"+rid+" div.ui-inline-edit, "+"tr#"+rid+" div.ui-inline-del","#"+gid+ ".ui-jqgrid-btable:first").hide();
 				$("tr#"+rid+" div.ui-inline-save, "+"tr#"+rid+" div.ui-inline-cancel","#"+gid+ ".ui-jqgrid-btable:first").show();
 				if($.isFunction($t.p._complete)) {$t.p._complete.call($t);}
 				break;
-			case 'save':
+			case save':
 				if ( $('#'+gid).jqGrid('saveRow',rid,  op.onSuccess,op.url, op.extraparam, saverow, op.onError,restorerow) ) {
 				$("tr#"+rid+" div.ui-inline-edit, "+"tr#"+rid+" div.ui-inline-del","#"+gid+ ".ui-jqgrid-btable:first").show();
 				$("tr#"+rid+" div.ui-inline-save, "+"tr#"+rid+" div.ui-inline-cancel","#"+gid+ ".ui-jqgrid-btable:first").hide();
 				if($.isFunction($t.p._complete)) {$t.p._complete.call($t);}
 				}
 				break;
-			case 'cancel' :
+			case cancel' :
 				$('#'+gid).jqGrid('restoreRow',rid, restorerow);
 				$("tr#"+rid+" div.ui-inline-edit, "+"tr#"+rid+" div.ui-inline-del","#"+gid+ ".ui-jqgrid-btable:first").show();
 				$("tr#"+rid+" div.ui-inline-save, "+"tr#"+rid+" div.ui-inline-cancel","#"+gid+ ".ui-jqgrid-btable:first").hide();
 				if($.isFunction($t.p._complete)) {$t.p._complete.call($t);}
 				break;
-			case 'del':
+			case del':
 				$('#'+gid).jqGrid('delGridRow',rid, op.delOptions);
 				break;
-			case 'formedit':
+			case formedit':
 				$('#'+gid).jqGrid('setSelection',rid);
 				$('#'+gid).jqGrid('editGridRow',rid, op.editOptions);
 				break;
@@ -491,37 +491,37 @@
 		op =options.colModel.formatoptions || {}, sep,
 		re = /([\.\*\_\'\(\)\{\}\+\?\\])/g,
 		unformatFunc = options.colModel.unformat||($.fn.fmatter[formatType] && $.fn.fmatter[formatType].unformat);
-		if(typeof unformatFunc !== 'undefined' && $.isFunction(unformatFunc) ) {
+		if(typeof unformatFunc !== undefined' && $.isFunction(unformatFunc) ) {
 			ret = unformatFunc($(cellval).text(), options, cellval);
 		} else if(!$.fmatter.isUndefined(formatType) && $.fmatter.isString(formatType) ) {
 			var opts = $.jgrid.formatter || {}, stripTag;
 			switch(formatType) {
-				case 'integer' :
+				case integer' :
 					op = $.extend({},opts.integer,op);
 					sep = op.thousandsSeparator.replace(re,"\\$1");
 					stripTag = new RegExp(sep, "g");
 					ret = $(cellval).text().replace(stripTag,'');
 					break;
-				case 'number' :
+				case number' :
 					op = $.extend({},opts.number,op);
 					sep = op.thousandsSeparator.replace(re,"\\$1");
 					stripTag = new RegExp(sep, "g");
 					ret = $(cellval).text().replace(stripTag,"").replace(op.decimalSeparator,'.');
 					break;
-				case 'currency':
+				case currency':
 					op = $.extend({},opts.currency,op);
 					sep = op.thousandsSeparator.replace(re,"\\$1");
 					stripTag = new RegExp(sep, "g");
 					ret = $(cellval).text().replace(stripTag,'').replace(op.decimalSeparator,'.').replace(op.prefix,'').replace(op.suffix,'');
 					break;
-				case 'checkbox':
+				case checkbox':
 					var cbv = (options.colModel.editoptions) ? options.colModel.editoptions.value.split(":") : ["Yes","No"];
 					ret = $('input',cellval).is(":checked") ? cbv[0] : cbv[1];
 					break;
-				case 'select' :
+				case select' :
 					ret = $.unformat.select(cellval,options,pos,cnt);
 					break;
-				case 'actions':
+				case actions':
 					return "";
 				default:
 					ret= $(cellval).text();
@@ -568,7 +568,7 @@
 							return false;
 						}
 					});
-					if( typeof(rv) != 'undefined' ) {return rv;}
+					if( typeof(rv) != undefined' ) {return rv;}
 				});
 			}
 			return ret.join(", ");
