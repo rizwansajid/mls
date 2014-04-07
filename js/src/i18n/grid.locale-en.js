@@ -18,7 +18,7 @@ $.jgrid = {
 		caption: "Search...",
 		Find: "Find",
 		Reset: "Reset",
-		odata : ['equal', 'not equal', 'less', 'less or equal','greater','greater or equal', 'begins with','does not begin with','is in','is not in','ends with','does not end with','contains','does not contain'],
+		odata : ['equal', not equal', less', less or equal','greater','greater or equal', begins with','does not begin with','is in','is not in','ends with','does not end with','contains','does not contain'],
 		groupOps: [	{ op: "AND", text: "all" },	{ op: "OR",  text: "any" }	],
 		matchText: " match",
 		rulesText: " rules"
@@ -41,7 +41,7 @@ $.jgrid = {
 			email: "is not a valid e-mail",
 			integer: "Please, enter valid integer value",
 			date: "Please, enter valid date value",
-			url: "is not a valid URL. Prefix required ('http://' or 'https://')",
+			url: "is not a valid URL. Prefix required ('http://' or https://')",
 			nodefined : " is not defined!",
 			novalue : " return value is required!",
 			customarray : "Custom function should return array!",
@@ -87,9 +87,9 @@ $.jgrid = {
 		model : "Length of colNames <> colModel!"
 	},
 	formatter : {
-		integer : {thousandsSeparator: " ", defaultValue: '0'},
-		number : {decimalSeparator:".", thousandsSeparator: " ", decimalPlaces: 2, defaultValue: '0.00'},
-		currency : {decimalSeparator:".", thousandsSeparator: " ", decimalPlaces: 2, prefix: "", suffix:"", defaultValue: '0.00'},
+		integer : {thousandsSeparator: " ", defaultValue: 0'},
+		number : {decimalSeparator:".", thousandsSeparator: " ", decimalPlaces: 2, defaultValue: 0.00'},
+		currency : {decimalSeparator:".", thousandsSeparator: " ", decimalPlaces: 2, prefix: "", suffix:"", defaultValue: 0.00'},
 		date : {
 			dayNames:   [
 				"Sun", "Mon", "Tue", "Wed", "Thr", "Fri", "Sat",
@@ -100,9 +100,9 @@ $.jgrid = {
 				"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
 			],
 			AmPm : ["am","pm","AM","PM"],
-			S: function (j) {return j < 11 || j > 13 ? ['st', 'nd', 'rd', 'th'][Math.min((j - 1) % 10, 3)] : 'th'},
-			srcformat: 'Y-m-d',
-			newformat: 'd/m/Y',
+			S: function (j) {return j < 11 || j > 13 ? ['st', nd', rd', th'][Math.min((j - 1) % 10, 3)] : th'},
+			srcformat: Y-m-d',
+			newformat: d/m/Y',
 			masks : {
 				ISO8601Long:"Y-m-d H:i:s",
 				ISO8601Short:"Y-m-d",
@@ -118,11 +118,11 @@ $.jgrid = {
 			},
 			reformatAfterEdit : false
 		},
-		baseLinkUrl: '',
-		showAction: '',
-		target: '',
+		baseLinkUrl: ',
+		showAction: ',
+		target: ',
 		checkbox : {disabled:true},
-		idName : 'id'
+		idName : id'
 	}
 };
 })(jQuery);

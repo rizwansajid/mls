@@ -18,7 +18,7 @@ $.jgrid = {
 		caption: "กำลังค้นหา...",
 		Find: "ค้นหา",
 		Reset: "คืนค่ากลับ",
-		odata : ['เท่ากับ', 'ไม่เท่ากับ', 'น้อยกว่า', 'ไม่มากกว่า','มากกกว่า','ไม่น้อยกว่า', 'ขึ้นต้นด้วย','ไม่ขึ้นต้นด้วย','มีคำใดคำหนึ่งใน','ไม่มีคำใดคำหนึ่งใน','ลงท้ายด้วย','ไม่ลงท้ายด้วย','มีคำว่า','ไม่มีคำว่า'],
+		odata : ['เท่ากับ', ไม่เท่ากับ', น้อยกว่า', ไม่มากกว่า','มากกกว่า','ไม่น้อยกว่า', ขึ้นต้นด้วย','ไม่ขึ้นต้นด้วย','มีคำใดคำหนึ่งใน','ไม่มีคำใดคำหนึ่งใน','ลงท้ายด้วย','ไม่ลงท้ายด้วย','มีคำว่า','ไม่มีคำว่า'],
 		groupOps: [	{ op: "และ", text: "ทั้งหมด" },	{ op: "หรือ",  text: "ใดๆ" }	],
 		matchText: " ตรงกันกับ",
 		rulesText: " ตามกฏ"
@@ -41,7 +41,7 @@ $.jgrid = {
 			email: "อีเมลล์นี้ไม่ถูกต้อง",
 			integer: "กรุณากรอกเป็นจำนวนเต็ม",
 			date: "กรุณากรอกวันที่ให้ถูกต้อง",
-			url: "URL ไม่ถูกต้อง URL จำเป็นต้องขึ้นต้นด้วย 'http://' หรือ 'https://'",
+			url: "URL ไม่ถูกต้อง URL จำเป็นต้องขึ้นต้นด้วย http://' หรือ https://'",
 			nodefined : "ไม่ได้ถูกกำหนดค่า!",
 			novalue : "ต้องการการคืนค่า!",
 			customarray : "ฟังก์ชันที่สร้างขึ้นต้องส่งค่ากลับเป็นแบบแอเรย์",
@@ -87,9 +87,9 @@ $.jgrid = {
 		model : "จำนวนคอลัมน์ไม่เท่ากับจำนวนคอลัมน์โมเดล!"
 	},
 	formatter : {
-		integer : {thousandsSeparator: " ", defaultValue: '0'},
-		number : {decimalSeparator:".", thousandsSeparator: " ", decimalPlaces: 2, defaultValue: '0.00'},
-		currency : {decimalSeparator:".", thousandsSeparator: " ", decimalPlaces: 2, prefix: "", suffix:"", defaultValue: '0.00'},
+		integer : {thousandsSeparator: " ", defaultValue: 0'},
+		number : {decimalSeparator:".", thousandsSeparator: " ", decimalPlaces: 2, defaultValue: 0.00'},
+		currency : {decimalSeparator:".", thousandsSeparator: " ", decimalPlaces: 2, prefix: "", suffix:"", defaultValue: 0.00'},
 		date : {
 			dayNames:   [
 				"อา", "จ", "อ", "พ", "พฤ", "ศ", "ส",
@@ -100,9 +100,9 @@ $.jgrid = {
 				"มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฏาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"
 			],
 			AmPm : ["am","pm","AM","PM"],
-			S: function (j) {return ''},
-			srcformat: 'Y-m-d',
-			newformat: 'd/m/Y',
+			S: function (j) {return '},
+			srcformat: Y-m-d',
+			newformat: d/m/Y',
 			masks : {
 				ISO8601Long:"Y-m-d H:i:s",
 				ISO8601Short:"Y-m-d",
@@ -118,11 +118,11 @@ $.jgrid = {
 			},
 			reformatAfterEdit : false
 		},
-		baseLinkUrl: '',
-		showAction: '',
-		target: '',
+		baseLinkUrl: ',
+		showAction: ',
+		target: ',
 		checkbox : {disabled:true},
-		idName : 'id'
+		idName : id'
 	}
 };
 })(jQuery);

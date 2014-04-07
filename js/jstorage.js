@@ -144,7 +144,7 @@
                 var dom_parser = ("DOMParser" in window && (new DOMParser()).parseFromString) ||
                         (window.ActiveXObject && function(_xmlString) {
                     var xml_doc = new ActiveXObject('Microsoft.XMLDOM');
-                    xml_doc.async = 'false';
+                    xml_doc.async = false';
                     xml_doc.loadXML(_xmlString);
                     return xml_doc;
                 }),
@@ -152,7 +152,7 @@
                 if(!dom_parser){
                     return false;
                 }
-                resultXML = dom_parser.call("DOMParser" in window && (new DOMParser()) || window, xmlString, 'text/xml');
+                resultXML = dom_parser.call("DOMParser" in window && (new DOMParser()) || window, xmlString, text/xml');
                 return this.isXML(resultXML)?resultXML:false;
             }
         };
@@ -169,7 +169,7 @@
         var localStorageReallyWorks = false;
         if("localStorage" in window){
             try {
-                window.localStorage.setItem('_tmptest', 'tmpval');
+                window.localStorage.setItem('_tmptest', tmpval');
                 localStorageReallyWorks = true;
                 window.localStorage.removeItem('_tmptest');
             } catch(BogusQuotaExceededErrorOnIos5) {
@@ -200,7 +200,7 @@
             if(_storage_elm.addBehavior){
 
                 /* Use a DOM element to act as userData storage */
-                _storage_elm.style.behavior = 'url(#default#userData)';
+                _storage_elm.style.behavior = url(#default#userData)';
 
                 /* userData element needs to be inserted into the DOM! */
                 document.getElementsByTagName('head')[0].appendChild(_storage_elm);
@@ -355,7 +355,7 @@
                     return _storage[key];
                 }
             }
-            return typeof(def) == 'undefined' ? null : def;
+            return typeof(def) == undefined' ? null : def;
         },
 
         /**
@@ -439,7 +439,7 @@
 
         /**
          * Returns an index of all used keys as an array
-         * ['key1', 'key2',..'keyN']
+         * ['key1', key2',..'keyN']
          *
          * @returns Array
         */
@@ -494,7 +494,7 @@
                 _storage_elm = new_storage_elm;
 
                 /* Use a DOM element to act as userData storage */
-                _storage_elm.style.behavior = 'url(#default#userData)';
+                _storage_elm.style.behavior = url(#default#userData)';
 
                 /* userData element needs to be inserted into the DOM! */
                 document.getElementsByTagName('head')[0].appendChild(_storage_elm);

@@ -18,7 +18,7 @@ $.jgrid = {
 	    caption: "Arama...",
 	    Find: "Bul",
 	    Reset: "Temizle",	    
-	    odata : ['eşit', 'eşit değil', 'daha az', 'daha az veya eşit', 'daha fazla', 'daha fazla veya eşit', 'ile başlayan', 'ile başlamayan', 'içinde', 'içinde değil', 'ile biten', 'ile bitmeyen', 'içeren', 'içermeyen'],
+	    odata : ['eşit', eşit değil', daha az', daha az veya eşit', daha fazla', daha fazla veya eşit', ile başlayan', ile başlamayan', içinde', içinde değil', ile biten', ile bitmeyen', içeren', içermeyen'],
 	    groupOps: [	{ op: "VE", text: "tüm" },	{ op: "VEYA",  text: "herhangi" }	],
 		matchText: " uyan",
 		rulesText: " kurallar"
@@ -40,7 +40,7 @@ $.jgrid = {
 	        maxValue:"girilen değer daha küçük ya da buna eşit olmalıdır",
 	        email: "geçerli bir e-posta adresi değildir",
 	        integer: "Lütfen bir tamsayı giriniz",
-			url: "Geçerli bir URL değil. ('http://' or 'https://') ön eki gerekli.",
+			url: "Geçerli bir URL değil. ('http://' or https://') ön eki gerekli.",
 			nodefined : " is not defined!",
 			novalue : " return value is required!",
 			customarray : "Custom function should return array!",
@@ -85,9 +85,9 @@ $.jgrid = {
 	    model : "colNames uzunluğu <> colModel!"
 	},
 	formatter : {
-		integer : {thousandsSeparator: " ", defaultValue: '0'},
-		number : {decimalSeparator:".", thousandsSeparator: " ", decimalPlaces: 2, defaultValue: '0.00'},
-		currency : {decimalSeparator:".", thousandsSeparator: " ", decimalPlaces: 2, prefix: "", suffix:"", defaultValue: '0.00'},
+		integer : {thousandsSeparator: " ", defaultValue: 0'},
+		number : {decimalSeparator:".", thousandsSeparator: " ", decimalPlaces: 2, defaultValue: 0.00'},
+		currency : {decimalSeparator:".", thousandsSeparator: " ", decimalPlaces: 2, prefix: "", suffix:"", defaultValue: 0.00'},
 		date : {
 			dayNames:   [
 				"Paz", "Pts", "Sal", "Çar", "Per", "Cum", "Cts",
@@ -98,9 +98,9 @@ $.jgrid = {
 				"Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"
 			],
 			AmPm : ["am","pm","AM","PM"],
-			S: function (j) {return j < 11 || j > 13 ? ['st', 'nd', 'rd', 'th'][Math.min((j - 1) % 10, 3)] : 'th'},
-			srcformat: 'Y-m-d',
-			newformat: 'd/m/Y',
+			S: function (j) {return j < 11 || j > 13 ? ['st', nd', rd', th'][Math.min((j - 1) % 10, 3)] : th'},
+			srcformat: Y-m-d',
+			newformat: d/m/Y',
 			masks : {
 	            ISO8601Long:"Y-m-d H:i:s",
 	            ISO8601Short:"Y-m-d",
@@ -116,11 +116,11 @@ $.jgrid = {
 	        },
 	        reformatAfterEdit : false
 		},
-		baseLinkUrl: '',
-		showAction: '',
-	    target: '',
+		baseLinkUrl: ',
+		showAction: ',
+	    target: ',
 	    checkbox : {disabled:true},
-		idName : 'id'
+		idName : id'
 	}
 };
 })(jQuery);

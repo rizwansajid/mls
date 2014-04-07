@@ -18,7 +18,7 @@ $.jgrid = {
 		caption: "Paieška...",
 		Find: "Ieškoti",
 		Reset: "Atstatyti",
-		odata : ['lygu', 'nelygu', 'mažiau', 'mažiau arba lygu','daugiau','daugiau arba lygu', 'prasideda','neprasideda','reikšmė yra','reikšmės nėra','baigiasi','nesibaigia','yra sudarytas','nėra sudarytas'],
+		odata : ['lygu', nelygu', mažiau', mažiau arba lygu','daugiau','daugiau arba lygu', prasideda','neprasideda','reikšmė yra','reikšmės nėra','baigiasi','nesibaigia','yra sudarytas','nėra sudarytas'],
 		groupOps: [	{ op: "AND", text: "visi" },	{ op: "OR",  text: "bet kuris" }	],
 		matchText: " match",
 		rulesText: " rules"
@@ -41,7 +41,7 @@ $.jgrid = {
 			email: "neteisingas el. pašto adresas",
 			integer: "Įveskite teisingą sveikąjį skaičių",
 			date: "Įveskite teisingą datą",
-			url: "blogas adresas. Nepamirškite pridėti ('http://' arba 'https://')",
+			url: "blogas adresas. Nepamirškite pridėti ('http://' arba https://')",
 			nodefined : " nėra apibrėžta!",
 			novalue : " turi būti gražinama kokia nors reikšmė!",
 			customarray : "Custom f-ja turi grąžinti masyvą!",
@@ -87,9 +87,9 @@ $.jgrid = {
 		model : "colNames skaičius <> colModel skaičiui!"
 	},
 	formatter : {
-		integer : {thousandsSeparator: "", defaultValue: '0'},
-		number : {decimalSeparator:",", thousandsSeparator: "", decimalPlaces: 2, defaultValue: '0.00'},
-		currency : {decimalSeparator:",", thousandsSeparator: "", decimalPlaces: 2, prefix: "", suffix:"", defaultValue: '0.00'},
+		integer : {thousandsSeparator: "", defaultValue: 0'},
+		number : {decimalSeparator:",", thousandsSeparator: "", decimalPlaces: 2, defaultValue: 0.00'},
+		currency : {decimalSeparator:",", thousandsSeparator: "", decimalPlaces: 2, prefix: "", suffix:"", defaultValue: 0.00'},
 		date : {
 			dayNames:   [
 				"Sek", "Pir", "Ant", "Tre", "Ket", "Pen", "Šeš",
@@ -100,9 +100,9 @@ $.jgrid = {
 				"Sausis", "Vasaris", "Kovas", "Balandis", "Gegužė", "Birželis", "Liepa", "Rugpjūtis", "Rugsėjis", "Spalis", "Lapkritis", "Gruodis"
 			],
 			AmPm : ["am","pm","AM","PM"],
-			S: function (j) {return j < 11 || j > 13 ? ['st', 'nd', 'rd', 'th'][Math.min((j - 1) % 10, 3)] : 'th'},
-			srcformat: 'Y-m-d',
-			newformat: 'd/m/Y',
+			S: function (j) {return j < 11 || j > 13 ? ['st', nd', rd', th'][Math.min((j - 1) % 10, 3)] : th'},
+			srcformat: Y-m-d',
+			newformat: d/m/Y',
 			masks : {
 				ISO8601Long:"Y-m-d H:i:s",
 				ISO8601Short:"Y-m-d",
@@ -118,11 +118,11 @@ $.jgrid = {
 			},
 			reformatAfterEdit : false
 		},
-		baseLinkUrl: '',
-		showAction: '',
-		target: '',
+		baseLinkUrl: ',
+		showAction: ',
+		target: ',
 		checkbox : {disabled:true},
-		idName : 'id'
+		idName : id'
 	}
 };
 })(jQuery);

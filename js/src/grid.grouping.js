@@ -5,24 +5,24 @@ $.jgrid.extend({
 		return this.each(function (){
 			var $t = this,
 			grp = $t.p.groupingView;
-			if(grp !== null && ( (typeof grp === 'object') || $.isFunction(grp) ) ) {
+			if(grp !== null && ( (typeof grp === object') || $.isFunction(grp) ) ) {
 				if(!grp.groupField.length) {
 					$t.p.grouping = false;
 				} else {
-					if ( typeof(grp.visibiltyOnNextGrouping) == 'undefined') {
+					if ( typeof(grp.visibiltyOnNextGrouping) == undefined') {
 						grp.visibiltyOnNextGrouping = [];
 					}
 					for(var i=0;i<grp.groupField.length;i++) {
 						if(!grp.groupOrder[i]) {
-							grp.groupOrder[i] = 'asc';
+							grp.groupOrder[i] = asc';
 						}
 						if(!grp.groupText[i]) {
-							grp.groupText[i] = '{0}';
+							grp.groupText[i] = {0}';
 						}
-						if( typeof(grp.groupColumnShow[i]) != 'boolean') {
+						if( typeof(grp.groupColumnShow[i]) != boolean') {
 							grp.groupColumnShow[i] = true;
 						}
-						if( typeof(grp.groupSummary[i]) != 'boolean') {
+						if( typeof(grp.groupSummary[i]) != boolean') {
 							grp.groupSummary[i] = false;
 						}
 						if(grp.groupColumnShow[i] === true) {
@@ -61,7 +61,7 @@ $.jgrid.extend({
 			// currently only one level
 			// Is this a good idea to do it so!!!!?????
 			items[0]  += "";
-			var itm = items[0].toString().split(' ').join('');
+			var itm = items[0].toString().split(' ).join('');
 			
 			var grp = this.p.groupingView, $t= this;
 			if(gdata.hasOwnProperty(itm)) {
@@ -143,7 +143,7 @@ $.jgrid.extend({
 				// ???? TO BE IMPROVED
 				grp.sortitems[0].sort();
 				grp.sortnames[0].sort();
-				if(grp.groupOrder[0].toLowerCase() == 'desc')
+				if(grp.groupOrder[0].toLowerCase() == desc')
 				{
 					grp.sortitems[0].reverse();
 					grp.sortnames[0].reverse();
@@ -187,7 +187,7 @@ $.jgrid.extend({
 								if(cm[k].summaryTpl)  {
 									tplfld = cm[k].summaryTpl;
 								}
-								if(this.st == 'avg') {
+								if(this.st == avg') {
 									if(this.v && grlen > 0) {
 										this.v = (this.v/grlen);
 									}
@@ -243,7 +243,7 @@ $.jgrid.extend({
 	groupingRemove : function (current) {
 		return this.each(function(){
 			var $t = this;
-			if(typeof(current) == 'undefined') {
+			if(typeof(current) == undefined') {
 				current = true;
 			}
 			$t.p.grouping = false;

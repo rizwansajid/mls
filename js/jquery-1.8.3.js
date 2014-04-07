@@ -40,7 +40,7 @@ var
 
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
-		// The jQuery object is actually just the init constructor 'enhanced'
+		// The jQuery object is actually just the init constructor enhanced'
 		return new jQuery.fn.init( selector, context, rootjQuery );
 	},
 
@@ -205,7 +205,7 @@ jQuery.fn = jQuery.prototype = {
 	get: function( num ) {
 		return num == null ?
 
-			// Return a 'clean' array
+			// Return a clean' array
 			this.toArray() :
 
 			// Return just the object
@@ -639,7 +639,7 @@ jQuery.extend({
 			ret = results || [];
 
 		if ( arr != null ) {
-			// The window, strings (and functions) also have 'length'
+			// The window, strings (and functions) also have length'
 			// Tweaked logic slightly to handle Blackberry 4.7 RegExp issues #6930
 			type = jQuery.type( arr );
 
@@ -1477,7 +1477,7 @@ jQuery.support = (function() {
 
 		if ( typeof div.style.zoom !== "undefined" ) {
 			// Check if natively block-level elements act like inline-block
-			// elements when setting their display to 'inline' and giving
+			// elements when setting their display to inline' and giving
 			// them layout
 			// (IE < 8 does this)
 			div.innerHTML = "";
@@ -3239,7 +3239,7 @@ jQuery.removeEvent = document.removeEventListener ?
 	};
 
 jQuery.Event = function( src, props ) {
-	// Allow instantiation without the 'new' keyword
+	// Allow instantiation without the new' keyword
 	if ( !(this instanceof jQuery.Event) ) {
 		return new jQuery.Event( src, props );
 	}
@@ -4479,7 +4479,7 @@ Expr = Sizzle.selectors = {
 
 		"text": function( elem ) {
 			var type, attr;
-			// IE6 and 7 will map elem.type to 'text' for new HTML5 types (search, etc)
+			// IE6 and 7 will map elem.type to text' for new HTML5 types (search, etc)
 			// use getAttribute instead to test this case
 			return elem.nodeName.toLowerCase() === "input" &&
 				(type = elem.type) === "text" &&
@@ -6147,7 +6147,7 @@ jQuery.buildFragment = function( args, context, scripts ) {
 	// Only cache "small" (1/2 KB) HTML strings that are associated with the main document
 	// Cloning options loses the selected state, so don't cache them
 	// IE 6 doesn't like it when you put <object> or <embed> elements in a fragment
-	// Also, WebKit does not clone 'checked' attributes on cloneNode, so don't cache
+	// Also, WebKit does not clone checked' attributes on cloneNode, so don't cache
 	// Lastly, IE6,7,8 will not correctly reuse cached fragments that were created from unknown elems #10501
 	if ( args.length === 1 && typeof first === "string" && first.length < 512 && context === document &&
 		first.charAt(0) === "<" && !rnocache.test( first ) &&
@@ -6737,14 +6737,14 @@ jQuery.extend({
 				return;
 			}
 
-			// If a number was passed in, add 'px' to the (except for certain CSS properties)
+			// If a number was passed in, add px' to the (except for certain CSS properties)
 			if ( type === "number" && !jQuery.cssNumber[ origName ] ) {
 				value += "px";
 			}
 
 			// If a hook was provided, use that value, otherwise just set the specified value
 			if ( !hooks || !("set" in hooks) || (value = hooks.set( elem, value, extra )) !== undefined ) {
-				// Wrapped to prevent IE from throwing errors when 'invalid' values are provided
+				// Wrapped to prevent IE from throwing errors when invalid' values are provided
 				// Fixes bug #5509
 				try {
 					style[ name ] = value;
@@ -7478,7 +7478,7 @@ jQuery.fn.load = function( url, params, callback ) {
 			jQuery("<div>")
 
 				// inject the contents of the document in, removing the scripts
-				// to avoid any 'Permission Denied' errors in IE
+				// to avoid any Permission Denied' errors in IE
 				.append( responseText.replace( rscript, "" ) )
 
 				// Locate the specified elements
@@ -8746,7 +8746,7 @@ function propFilter( props, specialEasing ) {
 			delete props[ name ];
 
 			// not quite $.extend, this wont overwrite keys already present.
-			// also - reusing 'index' from above because we have the correct "name"
+			// also - reusing index' from above because we have the correct "name"
 			for ( index in value ) {
 				if ( !( index in props ) ) {
 					props[ index ] = value[ index ];

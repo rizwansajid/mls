@@ -18,7 +18,7 @@ $.jgrid = {
 		caption: "Caută...",
 		Find: "Caută",
 		Reset: "Resetare",
-		odata : ['egal', 'diferit', 'mai mic', 'mai mic sau egal','mai mare','mai mare sau egal', 'începe cu','nu începe cu','se găsește în','nu se găsește în','se termină cu','nu se termină cu','conține',''],
+		odata : ['egal', diferit', mai mic', mai mic sau egal','mai mare','mai mare sau egal', începe cu','nu începe cu','se găsește în','nu se găsește în','se termină cu','nu se termină cu','conține',''],
 		groupOps: [	{ op: "AND", text: "toate" },	{ op: "OR",  text: "oricare" }	],
 		matchText: " găsite",
 		rulesText: " reguli"
@@ -41,7 +41,7 @@ $.jgrid = {
 			email: "nu este o adresă de e-mail validă",
 			integer: "Vă rugăm introduceți un număr valid",
 			date: "Vă rugăm să introduceți o dată validă",
-			url: "Nu este un URL valid. Prefixul  este necesar('http://' or 'https://')",
+			url: "Nu este un URL valid. Prefixul  este necesar('http://' or https://')",
 			nodefined : " is not defined!",
 			novalue : " return value is required!",
 			customarray : "Custom function should return array!",
@@ -86,9 +86,9 @@ $.jgrid = {
 		model : "Lungimea colNames <> colModel!"
 	},
 	formatter : {
-		integer : {thousandsSeparator: " ", defaultValue: '0'},
-		number : {decimalSeparator:",", thousandsSeparator: " ", decimalPlaces: 2, defaultValue: '0,00'},
-		currency : {decimalSeparator:",", thousandsSeparator: " ", decimalPlaces: 2, prefix: "", suffix:"", defaultValue: '0,00'},
+		integer : {thousandsSeparator: " ", defaultValue: 0'},
+		number : {decimalSeparator:",", thousandsSeparator: " ", decimalPlaces: 2, defaultValue: 0,00'},
+		currency : {decimalSeparator:",", thousandsSeparator: " ", decimalPlaces: 2, prefix: "", suffix:"", defaultValue: 0,00'},
 		date : {
 			dayNames:   [
 				"Dum", "Lun", "Mar", "Mie", "Joi", "Vin", "Sâm",
@@ -111,9 +111,9 @@ $.jgrid = {
 			 7th = Al șaptelea / A șaptea
 			 .... 
 			 */
-			S: function (j) {return j < 11 || j > 13 ? ['st', 'nd', 'rd', 'th'][Math.min((j - 1) % 10, 3)] : 'th'},
-			srcformat: 'Y-m-d',
-			newformat: 'd/m/Y',
+			S: function (j) {return j < 11 || j > 13 ? ['st', nd', rd', th'][Math.min((j - 1) % 10, 3)] : th'},
+			srcformat: Y-m-d',
+			newformat: d/m/Y',
 			masks : {
 				ISO8601Long:"Y-m-d H:i:s",
 				ISO8601Short:"Y-m-d",
@@ -129,11 +129,11 @@ $.jgrid = {
 			},
 			reformatAfterEdit : false
 		},
-		baseLinkUrl: '',
-		showAction: '',
-		target: '',
+		baseLinkUrl: ',
+		showAction: ',
+		target: ',
 		checkbox : {disabled:true},
-		idName : 'id'
+		idName : id'
 	}
 };
 })(jQuery);

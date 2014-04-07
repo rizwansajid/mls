@@ -19,7 +19,7 @@ $.jgrid = {
 	    caption: "Etsi...",
 	    Find: "Etsi",
 	    Reset: "Tyhjenn&auml;",
-	    odata: ['on', 'ei ole', 'pienempi', 'pienempi tai yht&auml;suuri','suurempi','suurempi tai yht&auml;suuri', 'alkaa','ei ala','joukossa','ei joukossa','loppuu','ei lopu','sis&auml;lt&auml;&auml;','ei sis&auml;ll&auml;','on tyhj&auml;','ei ole tyhj&auml;'],
+	    odata: ['on', ei ole', pienempi', pienempi tai yht&auml;suuri','suurempi','suurempi tai yht&auml;suuri', alkaa','ei ala','joukossa','ei joukossa','loppuu','ei lopu','sis&auml;lt&auml;&auml;','ei sis&auml;ll&auml;','on tyhj&auml;','ei ole tyhj&auml;'],
 	    groupOps: [	{ op: "AND", text: "kaikki" }, { op: "OR", text: "mik&auml; tahansa" }	],
 		matchText: "&nbsp;&nbsp;t&auml;yt&auml; ehdot:",
 		rulesText: ""
@@ -42,7 +42,7 @@ $.jgrid = {
 	        email: "ei ole kelvollinen s&auml;postiosoite",
 	        integer: "Anna kelvollinen kokonaisluku",
 			date: "Anna kelvollinen pvm",
-			url: "Ei ole kelvollinen linkki(URL). Alku oltava ('http://' tai 'https://')",
+			url: "Ei ole kelvollinen linkki(URL). Alku oltava ('http://' tai https://')",
 			nodefined: " ei ole m&auml;&auml;ritelty!",
 			novalue: " paluuarvo vaaditaan!",
 			customarray: "Oman funktion tulee palauttaa jono!",
@@ -87,9 +87,9 @@ $.jgrid = {
 	    model: "Pituus colNames <> colModel!"
 	},
 	formatter: {
-		integer: {thousandsSeparator: "", defaultValue: '0'},
-		number: {decimalSeparator:",", thousandsSeparator: "", decimalPlaces: 2, defaultValue: '0,00'},
-		currency: {decimalSeparator:",", thousandsSeparator: "", decimalPlaces: 2, prefix: "", suffix:"", defaultValue: '0,00'},
+		integer: {thousandsSeparator: "", defaultValue: 0'},
+		number: {decimalSeparator:",", thousandsSeparator: "", decimalPlaces: 2, defaultValue: 0,00'},
+		currency: {decimalSeparator:",", thousandsSeparator: "", decimalPlaces: 2, prefix: "", suffix:"", defaultValue: 0,00'},
 		date: {
 			dayNames:   [
 				"Su", "Ma", "Ti", "Ke", "To", "Pe", "La",
@@ -100,9 +100,9 @@ $.jgrid = {
 				"Tammikuu", "Helmikuu", "Maaliskuu", "Huhtikuu", "Toukokuu", "Kes&auml;kuu", "Hein&auml;kuu", "Elokuu", "Syyskuu", "Lokakuu", "Marraskuu", "Joulukuu"
 			],
 			AmPm: ["am","pm","AM","PM"],
-			S: function (j) {return j < 11 || j > 13 ? ['st', 'nd', 'rd', 'th'][Math.min((j - 1) % 10, 3)] : 'th'},
-			srcformat: 'Y-m-d',
-			newformat: 'd.m.Y',
+			S: function (j) {return j < 11 || j > 13 ? ['st', nd', rd', th'][Math.min((j - 1) % 10, 3)] : th'},
+			srcformat: Y-m-d',
+			newformat: d.m.Y',
 			masks: {
 	            ISO8601Long:"Y-m-d H:i:s",
 	            ISO8601Short:"Y-m-d",
@@ -118,11 +118,11 @@ $.jgrid = {
 	        },
 	        reformatAfterEdit : false
 		},
-		baseLinkUrl: '',
-		showAction: '',
-	    target: '',
+		baseLinkUrl: ',
+		showAction: ',
+	    target: ',
 	    checkbox: {disabled:true},
-		idName: 'id'
+		idName: id'
 	}
 };
 // FI

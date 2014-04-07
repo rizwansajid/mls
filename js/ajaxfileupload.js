@@ -5,20 +5,20 @@ jQuery.extend({
     createUploadIframe: function(id, uri)
 	{
 			//create frame
-            var frameId = 'jUploadFrame' + id;
-            var iframeHtml = '<iframe id="' + frameId + '" name="' + frameId + '" style="position:absolute; top:-9999px; left:-9999px"';
+            var frameId = jUploadFrame' + id;
+            var iframeHtml = <iframe id="' + frameId + " name="' + frameId + " style="position:absolute; top:-9999px; left:-9999px"';
 			if(window.ActiveXObject)
 			{
-                if(typeof uri== 'boolean'){
-					iframeHtml += ' src="' + 'javascript:false' + '"';
+                if(typeof uri== boolean'){
+					iframeHtml +=  src="' + javascript:false' + "';
 
                 }
-                else if(typeof uri== 'string'){
-					iframeHtml += ' src="' + uri + '"';
+                else if(typeof uri== string'){
+					iframeHtml +=  src="' + uri + "';
 
                 }	
 			}
-			iframeHtml += ' />';
+			iframeHtml +=  />';
 			jQuery(iframeHtml).appendTo(document.body);
 
             return jQuery('#' + frameId).get(0);			
@@ -26,14 +26,14 @@ jQuery.extend({
     createUploadForm: function(id, fileElementId, data)
 	{
 		//create form	
-		var formId = 'jUploadForm' + id;
-		var fileId = 'jUploadFile' + id;
-		var form = jQuery('<form  action="" method="POST" name="' + formId + '" id="' + formId + '" enctype="multipart/form-data"></form>');	
+		var formId = jUploadForm' + id;
+		var fileId = jUploadFile' + id;
+		var form = jQuery('<form  action="" method="POST" name="' + formId + " id="' + formId + " enctype="multipart/form-data"></form>');	
 		if(data)
 		{
 			for(var i in data)
 			{
-				jQuery('<input type="hidden" name="' + i + '" value="' + data[i] + '" />').appendTo(form);
+				jQuery('<input type="hidden" name="' + i + " value="' + data[i] + " />').appendTo(form);
 			}			
 		}		
 		var oldElement = jQuery('#' + fileElementId);
@@ -45,9 +45,9 @@ jQuery.extend({
 
 		
 		//set attributes
-		jQuery(form).css('position', 'absolute');
-		jQuery(form).css('top', '-1200px');
-		jQuery(form).css('left', '-1200px');
+		jQuery(form).css('position', absolute');
+		jQuery(form).css('top', -1200px');
+		jQuery(form).css('left', -1200px');
 		jQuery(form).appendTo('body');		
 		return form;
     },
@@ -58,8 +58,8 @@ jQuery.extend({
         var id = new Date().getTime()        
 		var form = jQuery.createUploadForm(id, s.fileElementId, (typeof(s.data)=='undefined'?false:s.data));
 		var io = jQuery.createUploadIframe(id, s.secureuri);
-		var frameId = 'jUploadFrame' + id;
-		var formId = 'jUploadForm' + id;		
+		var frameId = jUploadFrame' + id;
+		var formId = jUploadForm' + id;		
         // Watch for a new set of requests
         if ( s.global && ! jQuery.active++ )
 		{
@@ -160,15 +160,15 @@ jQuery.extend({
 
 			var form = jQuery('#' + formId);
 			jQuery(form).attr('action', s.url);
-			jQuery(form).attr('method', 'POST');
+			jQuery(form).attr('method', POST');
 			jQuery(form).attr('target', frameId);
             if(form.encoding)
 			{
-				jQuery(form).attr('encoding', 'multipart/form-data');      			
+				jQuery(form).attr('encoding', multipart/form-data');      			
             }
             else
 			{	
-				jQuery(form).attr('enctype', 'multipart/form-data');			
+				jQuery(form).attr('enctype', multipart/form-data');			
             }			
             jQuery(form).submit();
 

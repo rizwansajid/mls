@@ -18,7 +18,7 @@ $.jgrid = {
 		caption: "pretraživanje...",
 		Find: "Traži",
 		Reset: "Poništi",
-		odata : ['jednak', 'nije identièan', 'manje', 'manje ili identièno','veæe','veæe ili identièno', 'poèinje sa','ne poèinje sa ','je u','nije u','završava sa','ne završava sa','sadrži','ne sadrži'],
+		odata : ['jednak', nije identièan', manje', manje ili identièno','veæe','veæe ili identièno', poèinje sa','ne poèinje sa ,'je u','nije u','završava sa','ne završava sa','sadrži','ne sadrži'],
 		groupOps: [	{ op: "U", text: "sve" },	{ op: "ILI",  text: "bilo koji" }	],
 		matchText: " podudata se",
 		rulesText: " pravila"
@@ -41,7 +41,7 @@ $.jgrid = {
 			email: "neispravan e-mail",
 			integer: "Molim, unjeti ispravan cijeli broj (integer)",
 			date: "Molim, unjeti ispravan datum ",
-			url: "neispravan URL. Prefiks je obavezan ('http://' or 'https://')",
+			url: "neispravan URL. Prefiks je obavezan ('http://' or https://')",
 			nodefined : " nije definiran!",
 			novalue : " zahtjevan podatak je obavezan!",
 			customarray : "Opcionalna funkcija trebala bi bili polje (array)!",
@@ -87,9 +87,9 @@ $.jgrid = {
 		model : "Duljina colNames <> colModel!"
 	},
 	formatter : {
-		integer : {thousandsSeparator: " ", defaultValue: '0'},
-		number : {decimalSeparator:".", thousandsSeparator: " ", decimalPlaces: 2, defaultValue: '0.00'},
-		currency : {decimalSeparator:".", thousandsSeparator: " ", decimalPlaces: 2, prefix: "", suffix:"", defaultValue: '0.00'},
+		integer : {thousandsSeparator: " ", defaultValue: 0'},
+		number : {decimalSeparator:".", thousandsSeparator: " ", decimalPlaces: 2, defaultValue: 0.00'},
+		currency : {decimalSeparator:".", thousandsSeparator: " ", decimalPlaces: 2, prefix: "", suffix:"", defaultValue: 0.00'},
 		date : {
 			dayNames:   [
 				"Ned", "Pon", "Uto", "Sri", "Èet", "Pet", "Sub",
@@ -100,9 +100,9 @@ $.jgrid = {
 				"Sijeèanj", "Veljaæa", "Ožujak", "Travanj", "Svibanj", "Lipanj", "Srpanj", "Kolovoz", "Rujan", "Listopad", "Studeni", "Prosinac"
 			],
 			AmPm : ["am","pm","AM","PM"],
-			S: function (j) {return ''},
-			srcformat: 'Y-m-d',
-			newformat: 'd.m.Y.',
+			S: function (j) {return '},
+			srcformat: Y-m-d',
+			newformat: d.m.Y.',
 			masks : {
 				ISO8601Long:"Y-m-d H:i:s",
 				ISO8601Short:"Y-m-d",
@@ -118,11 +118,11 @@ $.jgrid = {
 			},
 			reformatAfterEdit : false
 		},
-		baseLinkUrl: '',
-		showAction: '',
-		target: '',
+		baseLinkUrl: ',
+		showAction: ',
+		target: ',
 		checkbox : {disabled:true},
-		idName : 'id'
+		idName : id'
 	}
 };
 })(jQuery);

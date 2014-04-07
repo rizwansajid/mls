@@ -19,7 +19,7 @@ $.jgrid = {
 		caption: "Keresés...",
 		Find: "Keres",
 		Reset: "Alapértelmezett",
-		odata : ['egyenlő', 'nem egyenlő', 'kevesebb', 'kevesebb vagy egyenlő','nagyobb','nagyobb vagy egyenlő', 'ezzel kezdődik','nem ezzel kezdődik','tartalmaz','nem tartalmaz','végződik','nem végződik','tartalmaz','nem tartalmaz'],
+		odata : ['egyenlő', nem egyenlő', kevesebb', kevesebb vagy egyenlő','nagyobb','nagyobb vagy egyenlő', ezzel kezdődik','nem ezzel kezdődik','tartalmaz','nem tartalmaz','végződik','nem végződik','tartalmaz','nem tartalmaz'],
 		groupOps: [	{ op: "AND", text: "all" },	{ op: "OR",  text: "any" }	],
 		matchText: " match",
 		rulesText: " rules"
@@ -42,7 +42,7 @@ $.jgrid = {
 			email: "hibás emailcím",
 			integer: "Kérjük adjon meg egy helyes egész számot",
 			date: "Kérjük adjon meg egy helyes dátumot",
-			url: "nem helyes cím. Előtag kötelező ('http://' vagy 'https://')",
+			url: "nem helyes cím. Előtag kötelező ('http://' vagy https://')",
 			nodefined : " nem definiált!",
 			novalue : " visszatérési érték kötelező!!",
 			customarray : "Custom function should return array!",
@@ -88,9 +88,9 @@ $.jgrid = {
 		model : "colNames és colModel hossza nem egyenlő!"
 	},
 	formatter : {
-		integer : {thousandsSeparator: " ", defaultValue: '0'},
-		number : {decimalSeparator:",", thousandsSeparator: " ", decimalPlaces: 2, defaultValue: '0,00'},
-		currency : {decimalSeparator:",", thousandsSeparator: " ", decimalPlaces: 2, prefix: "", suffix:"", defaultValue: '0,00'},
+		integer : {thousandsSeparator: " ", defaultValue: 0'},
+		number : {decimalSeparator:",", thousandsSeparator: " ", decimalPlaces: 2, defaultValue: 0,00'},
+		currency : {decimalSeparator:",", thousandsSeparator: " ", decimalPlaces: 2, prefix: "", suffix:"", defaultValue: 0,00'},
 		date : {
 			dayNames:   [
 				"Va", "Hé", "Ke", "Sze", "Csü", "Pé", "Szo",
@@ -101,9 +101,9 @@ $.jgrid = {
 				"Január", "Február", "Március", "Áprili", "Május", "Június", "Július", "Augusztus", "Szeptember", "Október", "November", "December"
 			],
 			AmPm : ["de","du","DE","DU"],
-			S: function (j) {return '.-ik';},
-			srcformat: 'Y-m-d',
-			newformat: 'Y/m/d',
+			S: function (j) {return .-ik';},
+			srcformat: Y-m-d',
+			newformat: Y/m/d',
 			masks : {
 				ISO8601Long:"Y-m-d H:i:s",
 				ISO8601Short:"Y-m-d",
@@ -119,11 +119,11 @@ $.jgrid = {
 			},
 			reformatAfterEdit : false
 		},
-		baseLinkUrl: '',
-		showAction: '',
-		target: '',
+		baseLinkUrl: ',
+		showAction: ',
+		target: ',
 		checkbox : {disabled:true},
-		idName : 'id'
+		idName : id'
 	}
 };
 })(jQuery);

@@ -51,11 +51,11 @@
 
 
 	            	$('#'+defaults.sIdList ).listnav({ 
-		    			initLetter: 'all', 
+		    			initLetter: all', 
 		    			includeAll: true, 
 		    			includeOther: false, 
 		    			flagDisabled: true, 
-		    			noMatchText: '', 
+		    			noMatchText: ', 
 		    			showCounts: false, 		    
 		    			onClick: function(letter){ 		    	
 		    				switch (letter)

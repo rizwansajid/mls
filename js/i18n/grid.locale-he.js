@@ -18,7 +18,7 @@ $.jgrid = {
 		caption: "מחפש...",
 		Find: "חפש",
 		Reset: "התחל",
-		odata : ['שווה', 'לא שווה', 'קטן', 'קטן או שווה','גדול','גדול או שווה', 'מתחיל ב','לא מתחיל ב','נמצא ב','לא נמצא ב','מסתיים ב','לא מסתיים ב','מכיל','לא מכיל'],
+		odata : ['שווה', לא שווה', קטן', קטן או שווה','גדול','גדול או שווה', מתחיל ב','לא מתחיל ב','נמצא ב','לא נמצא ב','מסתיים ב','לא מסתיים ב','מכיל','לא מכיל'],
 		groupOps: [	{ op: "AND", text: "הכל" },	{ op: "OR",  text: "אחד מ" }	],
 		matchText: " תואם",
 		rulesText: " חוקים"
@@ -41,7 +41,7 @@ $.jgrid = {
 			email: "היא לא כתובת איימל תקינה",
 			integer: "אנא, הכנס מספר שלם",
 			date: "אנא, הכנס תאריך תקין",
-			url: "הכתובת אינה תקינה. דרושה תחילית ('http://' או 'https://')",
+			url: "הכתובת אינה תקינה. דרושה תחילית ('http://' או https://')",
 			nodefined : " is not defined!",
 			novalue : " return value is required!",
 			customarray : "Custom function should return array!",
@@ -86,9 +86,9 @@ $.jgrid = {
 		model : "אורך של colNames <> colModel!"
 	},
 	formatter : {
-		integer : {thousandsSeparator: " ", defaultValue: '0'},
-		number : {decimalSeparator:".", thousandsSeparator: " ", decimalPlaces: 2, defaultValue: '0.00'},
-		currency : {decimalSeparator:".", thousandsSeparator: " ", decimalPlaces: 2, prefix: "", suffix:"", defaultValue: '0.00'},
+		integer : {thousandsSeparator: " ", defaultValue: 0'},
+		number : {decimalSeparator:".", thousandsSeparator: " ", decimalPlaces: 2, defaultValue: 0.00'},
+		currency : {decimalSeparator:".", thousandsSeparator: " ", decimalPlaces: 2, prefix: "", suffix:"", defaultValue: 0.00'},
 		date : {
 			dayNames:   [
 				"א", "ב", "ג", "ד", "ה", "ו", "ש",
@@ -99,9 +99,9 @@ $.jgrid = {
 				"ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני", "יולי", "אוגוסט", "ספטמבר", "אוקטובר", "נובמבר", "דצמבר"
 			],
 			AmPm : ["לפני הצהרים","אחר הצהרים","לפני הצהרים","אחר הצהרים"],
-			S: function (j) {return j < 11 || j > 13 ? ['', '', '', ''][Math.min((j - 1) % 10, 3)] : ''},
-			srcformat: 'Y-m-d',
-			newformat: 'd/m/Y',
+			S: function (j) {return j < 11 || j > 13 ? ['', ', ', '][Math.min((j - 1) % 10, 3)] : '},
+			srcformat: Y-m-d',
+			newformat: d/m/Y',
 			masks : {
 				ISO8601Long:"Y-m-d H:i:s",
 				ISO8601Short:"Y-m-d",
@@ -117,11 +117,11 @@ $.jgrid = {
 			},
 			reformatAfterEdit : false
 		},
-		baseLinkUrl: '',
-		showAction: '',
-		target: '',
+		baseLinkUrl: ',
+		showAction: ',
+		target: ',
 		checkbox : {disabled:true},
-		idName : 'id'
+		idName : id'
 	}
 };
 })(jQuery);

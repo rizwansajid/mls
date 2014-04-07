@@ -18,7 +18,7 @@ $.jgrid = {
 		caption: "Traženje...",
 		Find: "Traži",
 		Reset: "Resetuj",
-		odata : ['jednako', 'nije jednako', 'manje', 'manje ili jednako','veće','veće ili jednako', 'počinje sa','ne počinje sa','je u','nije u','završava sa','ne završava sa','sadrži','ne sadrži'],
+		odata : ['jednako', nije jednako', manje', manje ili jednako','veće','veće ili jednako', počinje sa','ne počinje sa','je u','nije u','završava sa','ne završava sa','sadrži','ne sadrži'],
 		groupOps: [	{ op: "AND", text: "sva" },	{ op: "OR",  text: "bilo koje" }	],
 		matchText: " primjeni",
 		rulesText: " pravila"
@@ -41,7 +41,7 @@ $.jgrid = {
 			email: "nije ispravna email adresa, nije valjda da ne umiješ ukucati mail!?",
 			integer: "Ne zajebaji se unesi cjelobrojnu vrijednost ",
 			date: "Unesite ispravan datum",
-			url: "nije ispravan URL. Potreban je prefiks ('http://' or 'https://')",
+			url: "nije ispravan URL. Potreban je prefiks ('http://' or https://')",
 			nodefined : " nije definisan!",
 			novalue : " zahtjevana je povratna vrijednost!",
 			customarray : "Prilagođena funkcija treba da vrati niz!",
@@ -87,9 +87,9 @@ $.jgrid = {
 		model : "Dužina modela colNames <> colModel!"
 	},
 	formatter : {
-		integer : {thousandsSeparator: " ", defaultValue: '0'},
-		number : {decimalSeparator:".", thousandsSeparator: " ", decimalPlaces: 2, defaultValue: '0.00'},
-		currency : {decimalSeparator:".", thousandsSeparator: " ", decimalPlaces: 2, prefix: "", suffix:"", defaultValue: '0.00'},
+		integer : {thousandsSeparator: " ", defaultValue: 0'},
+		number : {decimalSeparator:".", thousandsSeparator: " ", decimalPlaces: 2, defaultValue: 0.00'},
+		currency : {decimalSeparator:".", thousandsSeparator: " ", decimalPlaces: 2, prefix: "", suffix:"", defaultValue: 0.00'},
 		date : {
 			dayNames:   [
 				"Ned", "Pon", "Uto", "Sre", "Čet", "Pet", "Sub",
@@ -100,9 +100,9 @@ $.jgrid = {
 				"Januar", "Februar", "Mart", "April", "Maj", "Jun", "Jul", "Avgust", "Septembar", "Oktobar", "Novembar", "Decembar"
 			],
 			AmPm : ["am","pm","AM","PM"],
-			S: function (j) {return j < 11 || j > 13 ? ['st', 'nd', 'rd', 'th'][Math.min((j - 1) % 10, 3)] : 'th'},
-			srcformat: 'Y-m-d',
-			newformat: 'd/m/Y',
+			S: function (j) {return j < 11 || j > 13 ? ['st', nd', rd', th'][Math.min((j - 1) % 10, 3)] : th'},
+			srcformat: Y-m-d',
+			newformat: d/m/Y',
 			masks : {
 				ISO8601Long:"Y-m-d H:i:s",
 				ISO8601Short:"Y-m-d",
@@ -118,11 +118,11 @@ $.jgrid = {
 			},
 			reformatAfterEdit : false
 		},
-		baseLinkUrl: '',
-		showAction: '',
-		target: '',
+		baseLinkUrl: ',
+		showAction: ',
+		target: ',
 		checkbox : {disabled:true},
-		idName : 'id'
+		idName : id'
 	}
 };
 })(jQuery);
