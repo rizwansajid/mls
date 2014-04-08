@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns = "http://www.w3.org/ns/widgets"
     xmlns:gap = "http://phonegap.com/ns/1.0"
-    id        = "MyLifeSports.net"
+    id        = "MyLifeSports"
     versionCode="55"
     version   = "1.0.1">
   <!-- versionCode is optional and Android only -->
  
   <!--Phonegap version-->
   <preference name="phonegap-version" value="2.7.0" />
-  <name>KidsToProSports</name>
+  <name>MyLifeSports</name>
 
   <description>
 
-    Kids2ProSports is the world's premier multicultural Global Sports Network and Legacy Search Engine. It's exclusive “Timeline Features” provide the resources to Create, Share and Preserve “Your Sports Legacy“ from Childhood... to Professional and Beyond.
+    MyLifeSports is the world's premier multicultural Global Sports Network and Legacy Search Engine. It's exclusive “Timeline Features” provide the resources to Create, Share and Preserve “Your Sports Legacy“ from Childhood... to Professional and Beyond.
   </description>
 
   
